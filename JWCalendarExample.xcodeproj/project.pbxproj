@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C39635191E2F5634004687A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C39635181E2F5634004687A9 /* main.m */; };
+		C396351C1E2F5634004687A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C396351B1E2F5634004687A9 /* AppDelegate.m */; };
+		C396351F1E2F5634004687A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C396351E1E2F5634004687A9 /* ViewController.m */; };
+		C39635221E2F5634004687A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C39635201E2F5634004687A9 /* Main.storyboard */; };
+		C39635241E2F5634004687A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C39635231E2F5634004687A9 /* Assets.xcassets */; };
+		C39635271E2F5634004687A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C39635251E2F5634004687A9 /* LaunchScreen.storyboard */; };
+		C39635321E2F5634004687A9 /* JWCalendarExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C39635311E2F5634004687A9 /* JWCalendarExampleTests.m */; };
+		C396353D1E2F5634004687A9 /* JWCalendarExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C396353C1E2F5634004687A9 /* JWCalendarExampleUITests.m */; };
+		C39635591E2F5775004687A9 /* DayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C396354C1E2F5775004687A9 /* DayView.m */; };
+		C396355A1E2F5775004687A9 /* JWCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = C396354E1E2F5775004687A9 /* JWCalendar.m */; };
+		C396355B1E2F5775004687A9 /* JWCalendarConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C39635501E2F5775004687A9 /* JWCalendarConfig.m */; };
+		C396355C1E2F5775004687A9 /* MonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = C39635521E2F5775004687A9 /* MonthView.m */; };
+		C396355D1E2F5775004687A9 /* WeekBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C39635541E2F5775004687A9 /* WeekBarView.m */; };
+		C396355E1E2F5775004687A9 /* WeekCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = C39635561E2F5775004687A9 /* WeekCalendar.m */; };
+		C396355F1E2F5775004687A9 /* WeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = C39635581E2F5775004687A9 /* WeekView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C396352E1E2F5634004687A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C396350C1E2F5634004687A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C39635131E2F5634004687A9;
+			remoteInfo = JWCalendarExample;
+		};
+		C39635391E2F5634004687A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C396350C1E2F5634004687A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C39635131E2F5634004687A9;
+			remoteInfo = JWCalendarExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C39635141E2F5634004687A9 /* JWCalendarExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JWCalendarExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C39635181E2F5634004687A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C396351A1E2F5634004687A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C396351B1E2F5634004687A9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C396351D1E2F5634004687A9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C396351E1E2F5634004687A9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C39635211E2F5634004687A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C39635231E2F5634004687A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C39635261E2F5634004687A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C39635281E2F5634004687A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C396352D1E2F5634004687A9 /* JWCalendarExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JWCalendarExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C39635311E2F5634004687A9 /* JWCalendarExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWCalendarExampleTests.m; sourceTree = "<group>"; };
+		C39635331E2F5634004687A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C39635381E2F5634004687A9 /* JWCalendarExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JWCalendarExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C396353C1E2F5634004687A9 /* JWCalendarExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWCalendarExampleUITests.m; sourceTree = "<group>"; };
+		C396353E1E2F5634004687A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C396354B1E2F5775004687A9 /* DayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayView.h; sourceTree = "<group>"; };
+		C396354C1E2F5775004687A9 /* DayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayView.m; sourceTree = "<group>"; };
+		C396354D1E2F5775004687A9 /* JWCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWCalendar.h; sourceTree = "<group>"; };
+		C396354E1E2F5775004687A9 /* JWCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWCalendar.m; sourceTree = "<group>"; };
+		C396354F1E2F5775004687A9 /* JWCalendarConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWCalendarConfig.h; sourceTree = "<group>"; };
+		C39635501E2F5775004687A9 /* JWCalendarConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWCalendarConfig.m; sourceTree = "<group>"; };
+		C39635511E2F5775004687A9 /* MonthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonthView.h; sourceTree = "<group>"; };
+		C39635521E2F5775004687A9 /* MonthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonthView.m; sourceTree = "<group>"; };
+		C39635531E2F5775004687A9 /* WeekBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekBarView.h; sourceTree = "<group>"; };
+		C39635541E2F5775004687A9 /* WeekBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekBarView.m; sourceTree = "<group>"; };
+		C39635551E2F5775004687A9 /* WeekCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekCalendar.h; sourceTree = "<group>"; };
+		C39635561E2F5775004687A9 /* WeekCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekCalendar.m; sourceTree = "<group>"; };
+		C39635571E2F5775004687A9 /* WeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekView.h; sourceTree = "<group>"; };
+		C39635581E2F5775004687A9 /* WeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C39635111E2F5634004687A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C396352A1E2F5634004687A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C39635351E2F5634004687A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C396350B1E2F5634004687A9 = {
+			isa = PBXGroup;
+			children = (
+				C396354A1E2F5775004687A9 /* JWCalendar */,
+				C39635161E2F5634004687A9 /* JWCalendarExample */,
+				C39635301E2F5634004687A9 /* JWCalendarExampleTests */,
+				C396353B1E2F5634004687A9 /* JWCalendarExampleUITests */,
+				C39635151E2F5634004687A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C39635151E2F5634004687A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C39635141E2F5634004687A9 /* JWCalendarExample.app */,
+				C396352D1E2F5634004687A9 /* JWCalendarExampleTests.xctest */,
+				C39635381E2F5634004687A9 /* JWCalendarExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C39635161E2F5634004687A9 /* JWCalendarExample */ = {
+			isa = PBXGroup;
+			children = (
+				C396351A1E2F5634004687A9 /* AppDelegate.h */,
+				C396351B1E2F5634004687A9 /* AppDelegate.m */,
+				C396351D1E2F5634004687A9 /* ViewController.h */,
+				C396351E1E2F5634004687A9 /* ViewController.m */,
+				C39635201E2F5634004687A9 /* Main.storyboard */,
+				C39635231E2F5634004687A9 /* Assets.xcassets */,
+				C39635251E2F5634004687A9 /* LaunchScreen.storyboard */,
+				C39635281E2F5634004687A9 /* Info.plist */,
+				C39635171E2F5634004687A9 /* Supporting Files */,
+			);
+			path = JWCalendarExample;
+			sourceTree = "<group>";
+		};
+		C39635171E2F5634004687A9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C39635181E2F5634004687A9 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C39635301E2F5634004687A9 /* JWCalendarExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				C39635311E2F5634004687A9 /* JWCalendarExampleTests.m */,
+				C39635331E2F5634004687A9 /* Info.plist */,
+			);
+			path = JWCalendarExampleTests;
+			sourceTree = "<group>";
+		};
+		C396353B1E2F5634004687A9 /* JWCalendarExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C396353C1E2F5634004687A9 /* JWCalendarExampleUITests.m */,
+				C396353E1E2F5634004687A9 /* Info.plist */,
+			);
+			path = JWCalendarExampleUITests;
+			sourceTree = "<group>";
+		};
+		C396354A1E2F5775004687A9 /* JWCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				C396354B1E2F5775004687A9 /* DayView.h */,
+				C396354C1E2F5775004687A9 /* DayView.m */,
+				C396354D1E2F5775004687A9 /* JWCalendar.h */,
+				C396354E1E2F5775004687A9 /* JWCalendar.m */,
+				C396354F1E2F5775004687A9 /* JWCalendarConfig.h */,
+				C39635501E2F5775004687A9 /* JWCalendarConfig.m */,
+				C39635511E2F5775004687A9 /* MonthView.h */,
+				C39635521E2F5775004687A9 /* MonthView.m */,
+				C39635531E2F5775004687A9 /* WeekBarView.h */,
+				C39635541E2F5775004687A9 /* WeekBarView.m */,
+				C39635551E2F5775004687A9 /* WeekCalendar.h */,
+				C39635561E2F5775004687A9 /* WeekCalendar.m */,
+				C39635571E2F5775004687A9 /* WeekView.h */,
+				C39635581E2F5775004687A9 /* WeekView.m */,
+			);
+			path = JWCalendar;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C39635131E2F5634004687A9 /* JWCalendarExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C39635411E2F5634004687A9 /* Build configuration list for PBXNativeTarget "JWCalendarExample" */;
+			buildPhases = (
+				C39635101E2F5634004687A9 /* Sources */,
+				C39635111E2F5634004687A9 /* Frameworks */,
+				C39635121E2F5634004687A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JWCalendarExample;
+			productName = JWCalendarExample;
+			productReference = C39635141E2F5634004687A9 /* JWCalendarExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C396352C1E2F5634004687A9 /* JWCalendarExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C39635441E2F5634004687A9 /* Build configuration list for PBXNativeTarget "JWCalendarExampleTests" */;
+			buildPhases = (
+				C39635291E2F5634004687A9 /* Sources */,
+				C396352A1E2F5634004687A9 /* Frameworks */,
+				C396352B1E2F5634004687A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C396352F1E2F5634004687A9 /* PBXTargetDependency */,
+			);
+			name = JWCalendarExampleTests;
+			productName = JWCalendarExampleTests;
+			productReference = C396352D1E2F5634004687A9 /* JWCalendarExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C39635371E2F5634004687A9 /* JWCalendarExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C39635471E2F5634004687A9 /* Build configuration list for PBXNativeTarget "JWCalendarExampleUITests" */;
+			buildPhases = (
+				C39635341E2F5634004687A9 /* Sources */,
+				C39635351E2F5634004687A9 /* Frameworks */,
+				C39635361E2F5634004687A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C396353A1E2F5634004687A9 /* PBXTargetDependency */,
+			);
+			name = JWCalendarExampleUITests;
+			productName = JWCalendarExampleUITests;
+			productReference = C39635381E2F5634004687A9 /* JWCalendarExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C396350C1E2F5634004687A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = YANGWW;
+				TargetAttributes = {
+					C39635131E2F5634004687A9 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = XT439B7K3G;
+						ProvisioningStyle = Automatic;
+					};
+					C396352C1E2F5634004687A9 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = XT439B7K3G;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C39635131E2F5634004687A9;
+					};
+					C39635371E2F5634004687A9 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = XT439B7K3G;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C39635131E2F5634004687A9;
+					};
+				};
+			};
+			buildConfigurationList = C396350F1E2F5634004687A9 /* Build configuration list for PBXProject "JWCalendarExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C396350B1E2F5634004687A9;
+			productRefGroup = C39635151E2F5634004687A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C39635131E2F5634004687A9 /* JWCalendarExample */,
+				C396352C1E2F5634004687A9 /* JWCalendarExampleTests */,
+				C39635371E2F5634004687A9 /* JWCalendarExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C39635121E2F5634004687A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C39635271E2F5634004687A9 /* LaunchScreen.storyboard in Resources */,
+				C39635241E2F5634004687A9 /* Assets.xcassets in Resources */,
+				C39635221E2F5634004687A9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C396352B1E2F5634004687A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C39635361E2F5634004687A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C39635101E2F5634004687A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C396351F1E2F5634004687A9 /* ViewController.m in Sources */,
+				C39635591E2F5775004687A9 /* DayView.m in Sources */,
+				C396355F1E2F5775004687A9 /* WeekView.m in Sources */,
+				C396355B1E2F5775004687A9 /* JWCalendarConfig.m in Sources */,
+				C396351C1E2F5634004687A9 /* AppDelegate.m in Sources */,
+				C396355D1E2F5775004687A9 /* WeekBarView.m in Sources */,
+				C396355E1E2F5775004687A9 /* WeekCalendar.m in Sources */,
+				C396355C1E2F5775004687A9 /* MonthView.m in Sources */,
+				C39635191E2F5634004687A9 /* main.m in Sources */,
+				C396355A1E2F5775004687A9 /* JWCalendar.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C39635291E2F5634004687A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C39635321E2F5634004687A9 /* JWCalendarExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C39635341E2F5634004687A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C396353D1E2F5634004687A9 /* JWCalendarExampleUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C396352F1E2F5634004687A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C39635131E2F5634004687A9 /* JWCalendarExample */;
+			targetProxy = C396352E1E2F5634004687A9 /* PBXContainerItemProxy */;
+		};
+		C396353A1E2F5634004687A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C39635131E2F5634004687A9 /* JWCalendarExample */;
+			targetProxy = C39635391E2F5634004687A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C39635201E2F5634004687A9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C39635211E2F5634004687A9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C39635251E2F5634004687A9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C39635261E2F5634004687A9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C396353F1E2F5634004687A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C39635401E2F5634004687A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C39635421E2F5634004687A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XT439B7K3G;
+				INFOPLIST_FILE = JWCalendarExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HappyTime.box-test.JWCalendarExample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C39635431E2F5634004687A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XT439B7K3G;
+				INFOPLIST_FILE = JWCalendarExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HappyTime.box-test.JWCalendarExample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C39635451E2F5634004687A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XT439B7K3G;
+				INFOPLIST_FILE = JWCalendarExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HappyTime.box-test.JWCalendarExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JWCalendarExample.app/JWCalendarExample";
+			};
+			name = Debug;
+		};
+		C39635461E2F5634004687A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XT439B7K3G;
+				INFOPLIST_FILE = JWCalendarExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HappyTime.box-test.JWCalendarExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JWCalendarExample.app/JWCalendarExample";
+			};
+			name = Release;
+		};
+		C39635481E2F5634004687A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = XT439B7K3G;
+				INFOPLIST_FILE = JWCalendarExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HappyTime.box-test.JWCalendarExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = JWCalendarExample;
+			};
+			name = Debug;
+		};
+		C39635491E2F5634004687A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = XT439B7K3G;
+				INFOPLIST_FILE = JWCalendarExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HappyTime.box-test.JWCalendarExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = JWCalendarExample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C396350F1E2F5634004687A9 /* Build configuration list for PBXProject "JWCalendarExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C396353F1E2F5634004687A9 /* Debug */,
+				C39635401E2F5634004687A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C39635411E2F5634004687A9 /* Build configuration list for PBXNativeTarget "JWCalendarExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C39635421E2F5634004687A9 /* Debug */,
+				C39635431E2F5634004687A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C39635441E2F5634004687A9 /* Build configuration list for PBXNativeTarget "JWCalendarExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C39635451E2F5634004687A9 /* Debug */,
+				C39635461E2F5634004687A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C39635471E2F5634004687A9 /* Build configuration list for PBXNativeTarget "JWCalendarExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C39635481E2F5634004687A9 /* Debug */,
+				C39635491E2F5634004687A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C396350C1E2F5634004687A9 /* Project object */;
+}
