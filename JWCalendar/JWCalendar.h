@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "JWCalendarConfig.h"
+#import "JWCategory.h"
 
 #import "WeekBarView.h"
 #import "MonthView.h"

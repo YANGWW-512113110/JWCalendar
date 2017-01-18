@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "JWCalendarConfig.h"
+#import "JWCategory.h"
 
 @class DayView;
 
