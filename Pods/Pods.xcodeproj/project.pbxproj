@@ -1,0 +1,558 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		082D138CA25FEA8E0FE868EEB7F3FEEF /* UIView+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 297DBEAA0F2331A5C55ADE6D9A05D779 /* UIView+MJ.m */; };
+		0CEF8F79A92C240DEB8BB2AD8D54F87E /* CVKHierarchySearcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 09F19C5DEC31E1752ADD5AB80C3DBB8E /* CVKHierarchySearcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EEA4CCE69567D638411B4DAC23911D2 /* UIViewController+JWTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0E0D8DCA9A94AA093B6E95DE991C2E /* UIViewController+JWTitleView.m */; };
+		11BC778B0690D5FE409D49A30DB07129 /* JWCategory_-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C30D9C67E83AC783C544360B1AC4A71E /* JWCategory_-dummy.m */; };
+		18781A151E0D887E095B2CF5EC912911 /* UIBarButtonItem+JW.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F0BD3AF83D82147F18A385404176EF /* UIBarButtonItem+JW.m */; };
+		1A013095476531C1D2A80AADCBF9AD75 /* JWUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E48EE180FCC8FBC81ADD3B585145DD /* JWUtility.m */; };
+		1E58355D879B25AA6EF78880A10D9A01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		216A1145C840E1737F20C5EF2152F3B1 /* UIColor+JW.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E91720ECD454E51CE19AB8F480D584 /* UIColor+JW.m */; };
+		2CCBDCD61827A844F848765823B4387A /* macro-jw.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8A8E2EF24C306A1074C19DFCE21AB7 /* macro-jw.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34B3B2ACED3DFC6128E0CD23663EC50C /* NSString+JW.m in Sources */ = {isa = PBXBuildFile; fileRef = A24BD3AA32D0352718179F1570037B1F /* NSString+JW.m */; };
+		35BF3C3DE73A14A3A80B6B99C0621FF0 /* UIButton+JW.h in Headers */ = {isa = PBXBuildFile; fileRef = FF4CD55988E22AE9142B45C61253D3FF /* UIButton+JW.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		378B435BF7EAF6DA407F5A01823BA5B6 /* UIButton+JW.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C06F0B10E9FCA12E1DDF6D24E2DE4C /* UIButton+JW.m */; };
+		4D12B204AF654658AE58971DC6636C92 /* NSDate+JW.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F9C0B0C152220B92D87230952EFC1B /* NSDate+JW.m */; };
+		548E9B432EEF86713CC83D91A9F46BF7 /* UIImageView+JW.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B6236BD8D3701D8867D30AEDBF1B82 /* UIImageView+JW.m */; };
+		663113C7100D7C456C0F198E82298D88 /* NSDate+JW.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ACE661C7D2720A6B0FA2D8EFECDBA96 /* NSDate+JW.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6794E88DD7989920FE83E192BBDA821A /* JWUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 665E6DB7BF78BD7763A01A9E03A72D45 /* JWUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E26C6A3524A35289018CC914AA60C05 /* UIImageView+JW.h in Headers */ = {isa = PBXBuildFile; fileRef = F3A86513B9B31ADB202E31B3F72AEC52 /* UIImageView+JW.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		837DD3F4821D46758BBD0EC9C9ACB850 /* UILabel+JW.h in Headers */ = {isa = PBXBuildFile; fileRef = 0821E83BE0966E4FD61D902F77DAF4CF /* UILabel+JW.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		846F2F4A5C9E87D1D0CB78ED8C9C9CFF /* UIBarButtonItem+JW.h in Headers */ = {isa = PBXBuildFile; fileRef = D559B28FC62616F01BB3CCF3C9539067 /* UIBarButtonItem+JW.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		864533D8171006E375735279F660FA48 /* UIViewController+JWTitleView.h in Headers */ = {isa = PBXBuildFile; fileRef = AE559D4329ADF40FE4F94A8D6B4A3352 /* UIViewController+JWTitleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		892DF3FCF5549A40DEF5C80C36D4C12E /* UIColor+JW.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B973B815610C11ECD4015582215C22 /* UIColor+JW.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B4668E5969DF5C7C413B9BFCB98887F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		9376ABDC3D1E12E4A1709F94BBFC76D6 /* UILabel+JW.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1476CDC50EDBF2DD89DF1F6F5F7003 /* UILabel+JW.m */; };
+		ABB36FF7012EFE9E8D46348F7F64FD2C /* Pods-JWCalendarExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64F1DA33FD5AB4867BDBFEFEA9B5A6 /* Pods-JWCalendarExample-dummy.m */; };
+		C3E9E6CC64AACD6E2D07E9C22604649A /* NSString+JW.h in Headers */ = {isa = PBXBuildFile; fileRef = 8468EA3EDFE377BFB47A077EE4BB7C57 /* NSString+JW.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C55F0597B96379B3EC65958746BD331D /* JWCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E5F421DC7766209C306BAE98AD90FF0 /* JWCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E38781B06625337763B4EC1A1E443FC4 /* UIView+MJ.h in Headers */ = {isa = PBXBuildFile; fileRef = D6866F92E93657CF1DE2D5612A79794A /* UIView+MJ.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9835B36AC7831DA28BF42E5C8E50ADD /* CVKHierarchySearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD5F886763BB2D2E1797C0D43769B17 /* CVKHierarchySearcher.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		309034AF52A8D4AA0D237E433D7989E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86D1FA603AD9C3EF25DCA173C0ECC71E;
+			remoteInfo = JWCategory_;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0821E83BE0966E4FD61D902F77DAF4CF /* UILabel+JW.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+JW.h"; path = "JWCategory/UILabel+JW.h"; sourceTree = "<group>"; };
+		09F19C5DEC31E1752ADD5AB80C3DBB8E /* CVKHierarchySearcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CVKHierarchySearcher.h; path = JWCategory/CVKHierarchySearcher.h; sourceTree = "<group>"; };
+		0BD5F886763BB2D2E1797C0D43769B17 /* CVKHierarchySearcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CVKHierarchySearcher.m; path = JWCategory/CVKHierarchySearcher.m; sourceTree = "<group>"; };
+		10C06F0B10E9FCA12E1DDF6D24E2DE4C /* UIButton+JW.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+JW.m"; path = "JWCategory/UIButton+JW.m"; sourceTree = "<group>"; };
+		1C3B5CB7575D0DE49258F4E16D211679 /* libJWCategory_.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libJWCategory_.a; path = libJWCategory_.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E5F421DC7766209C306BAE98AD90FF0 /* JWCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JWCategory.h; path = JWCategory/JWCategory.h; sourceTree = "<group>"; };
+		24E48EE180FCC8FBC81ADD3B585145DD /* JWUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JWUtility.m; path = JWCategory/JWUtility.m; sourceTree = "<group>"; };
+		297DBEAA0F2331A5C55ADE6D9A05D779 /* UIView+MJ.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MJ.m"; path = "JWCategory/UIView+MJ.m"; sourceTree = "<group>"; };
+		2A0E0D8DCA9A94AA093B6E95DE991C2E /* UIViewController+JWTitleView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+JWTitleView.m"; path = "JWCategory/UIViewController+JWTitleView.m"; sourceTree = "<group>"; };
+		2C01BA7E13C77F6C3433287223140FD1 /* JWCategory_-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JWCategory_-prefix.pch"; sourceTree = "<group>"; };
+		36B973B815610C11ECD4015582215C22 /* UIColor+JW.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+JW.h"; path = "JWCategory/UIColor+JW.h"; sourceTree = "<group>"; };
+		3E1319638CB6A9FB0BC1F97C2D8D654A /* Pods-JWCalendarExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JWCalendarExample-frameworks.sh"; sourceTree = "<group>"; };
+		439D1AB7D252DAD46A31A58FC0444D54 /* Pods-JWCalendarExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JWCalendarExample.release.xcconfig"; sourceTree = "<group>"; };
+		4F3AE72FB663546DBDFBD49AC266EF2C /* Pods-JWCalendarExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JWCalendarExample.debug.xcconfig"; sourceTree = "<group>"; };
+		64F2C3F7FCCA53498A8D055A52E7B7E5 /* JWCategory_.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JWCategory_.xcconfig; sourceTree = "<group>"; };
+		65E91720ECD454E51CE19AB8F480D584 /* UIColor+JW.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+JW.m"; path = "JWCategory/UIColor+JW.m"; sourceTree = "<group>"; };
+		665E6DB7BF78BD7763A01A9E03A72D45 /* JWUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JWUtility.h; path = JWCategory/JWUtility.h; sourceTree = "<group>"; };
+		6A1476CDC50EDBF2DD89DF1F6F5F7003 /* UILabel+JW.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+JW.m"; path = "JWCategory/UILabel+JW.m"; sourceTree = "<group>"; };
+		82B7A7315D57E19C6CE4BB3B54D09051 /* libPods-JWCalendarExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-JWCalendarExample.a"; path = "libPods-JWCalendarExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8468EA3EDFE377BFB47A077EE4BB7C57 /* NSString+JW.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+JW.h"; path = "JWCategory/NSString+JW.h"; sourceTree = "<group>"; };
+		8ACE661C7D2720A6B0FA2D8EFECDBA96 /* NSDate+JW.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+JW.h"; path = "JWCategory/NSDate+JW.h"; sourceTree = "<group>"; };
+		8B64F1DA33FD5AB4867BDBFEFEA9B5A6 /* Pods-JWCalendarExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JWCalendarExample-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A24BD3AA32D0352718179F1570037B1F /* NSString+JW.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+JW.m"; path = "JWCategory/NSString+JW.m"; sourceTree = "<group>"; };
+		AE559D4329ADF40FE4F94A8D6B4A3352 /* UIViewController+JWTitleView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+JWTitleView.h"; path = "JWCategory/UIViewController+JWTitleView.h"; sourceTree = "<group>"; };
+		B7F9C0B0C152220B92D87230952EFC1B /* NSDate+JW.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+JW.m"; path = "JWCategory/NSDate+JW.m"; sourceTree = "<group>"; };
+		BA8A8E2EF24C306A1074C19DFCE21AB7 /* macro-jw.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "macro-jw.h"; path = "JWCategory/macro-jw.h"; sourceTree = "<group>"; };
+		BAC1DA0760F4C84B2AFFA28A3FB32856 /* Pods-JWCalendarExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JWCalendarExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		C30D9C67E83AC783C544360B1AC4A71E /* JWCategory_-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JWCategory_-dummy.m"; sourceTree = "<group>"; };
+		C6B6236BD8D3701D8867D30AEDBF1B82 /* UIImageView+JW.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+JW.m"; path = "JWCategory/UIImageView+JW.m"; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CE0027BD6A45BB975EB4C3BE8D90339C /* Pods-JWCalendarExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JWCalendarExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D0F0BD3AF83D82147F18A385404176EF /* UIBarButtonItem+JW.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+JW.m"; path = "JWCategory/UIBarButtonItem+JW.m"; sourceTree = "<group>"; };
+		D559B28FC62616F01BB3CCF3C9539067 /* UIBarButtonItem+JW.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+JW.h"; path = "JWCategory/UIBarButtonItem+JW.h"; sourceTree = "<group>"; };
+		D6866F92E93657CF1DE2D5612A79794A /* UIView+MJ.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+MJ.h"; path = "JWCategory/UIView+MJ.h"; sourceTree = "<group>"; };
+		EF89DD66C421E6D38D3A313D38DC25C5 /* Pods-JWCalendarExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JWCalendarExample-resources.sh"; sourceTree = "<group>"; };
+		F3A86513B9B31ADB202E31B3F72AEC52 /* UIImageView+JW.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+JW.h"; path = "JWCategory/UIImageView+JW.h"; sourceTree = "<group>"; };
+		FF4CD55988E22AE9142B45C61253D3FF /* UIButton+JW.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+JW.h"; path = "JWCategory/UIButton+JW.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		082110E2B20AB769AC2BB582C2DAE74D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E58355D879B25AA6EF78880A10D9A01 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF09AA366F2FC4CD52D49A0012DAB058 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B4668E5969DF5C7C413B9BFCB98887F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		426427984AD41D15A109D8B282B99CF3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				64F2C3F7FCCA53498A8D055A52E7B7E5 /* JWCategory_.xcconfig */,
+				C30D9C67E83AC783C544360B1AC4A71E /* JWCategory_-dummy.m */,
+				2C01BA7E13C77F6C3433287223140FD1 /* JWCategory_-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/JWCategory_";
+			sourceTree = "<group>";
+		};
+		57D568421D20537BC7893CF247C00D62 /* JWCategory_ */ = {
+			isa = PBXGroup;
+			children = (
+				09F19C5DEC31E1752ADD5AB80C3DBB8E /* CVKHierarchySearcher.h */,
+				0BD5F886763BB2D2E1797C0D43769B17 /* CVKHierarchySearcher.m */,
+				1E5F421DC7766209C306BAE98AD90FF0 /* JWCategory.h */,
+				665E6DB7BF78BD7763A01A9E03A72D45 /* JWUtility.h */,
+				24E48EE180FCC8FBC81ADD3B585145DD /* JWUtility.m */,
+				BA8A8E2EF24C306A1074C19DFCE21AB7 /* macro-jw.h */,
+				8ACE661C7D2720A6B0FA2D8EFECDBA96 /* NSDate+JW.h */,
+				B7F9C0B0C152220B92D87230952EFC1B /* NSDate+JW.m */,
+				8468EA3EDFE377BFB47A077EE4BB7C57 /* NSString+JW.h */,
+				A24BD3AA32D0352718179F1570037B1F /* NSString+JW.m */,
+				D559B28FC62616F01BB3CCF3C9539067 /* UIBarButtonItem+JW.h */,
+				D0F0BD3AF83D82147F18A385404176EF /* UIBarButtonItem+JW.m */,
+				FF4CD55988E22AE9142B45C61253D3FF /* UIButton+JW.h */,
+				10C06F0B10E9FCA12E1DDF6D24E2DE4C /* UIButton+JW.m */,
+				36B973B815610C11ECD4015582215C22 /* UIColor+JW.h */,
+				65E91720ECD454E51CE19AB8F480D584 /* UIColor+JW.m */,
+				F3A86513B9B31ADB202E31B3F72AEC52 /* UIImageView+JW.h */,
+				C6B6236BD8D3701D8867D30AEDBF1B82 /* UIImageView+JW.m */,
+				0821E83BE0966E4FD61D902F77DAF4CF /* UILabel+JW.h */,
+				6A1476CDC50EDBF2DD89DF1F6F5F7003 /* UILabel+JW.m */,
+				D6866F92E93657CF1DE2D5612A79794A /* UIView+MJ.h */,
+				297DBEAA0F2331A5C55ADE6D9A05D779 /* UIView+MJ.m */,
+				AE559D4329ADF40FE4F94A8D6B4A3352 /* UIViewController+JWTitleView.h */,
+				2A0E0D8DCA9A94AA093B6E95DE991C2E /* UIViewController+JWTitleView.m */,
+				426427984AD41D15A109D8B282B99CF3 /* Support Files */,
+			);
+			name = JWCategory_;
+			path = JWCategory_;
+			sourceTree = "<group>";
+		};
+		5F44102109C438802D2450CCE7895217 /* Pods-JWCalendarExample */ = {
+			isa = PBXGroup;
+			children = (
+				CE0027BD6A45BB975EB4C3BE8D90339C /* Pods-JWCalendarExample-acknowledgements.markdown */,
+				BAC1DA0760F4C84B2AFFA28A3FB32856 /* Pods-JWCalendarExample-acknowledgements.plist */,
+				8B64F1DA33FD5AB4867BDBFEFEA9B5A6 /* Pods-JWCalendarExample-dummy.m */,
+				3E1319638CB6A9FB0BC1F97C2D8D654A /* Pods-JWCalendarExample-frameworks.sh */,
+				EF89DD66C421E6D38D3A313D38DC25C5 /* Pods-JWCalendarExample-resources.sh */,
+				4F3AE72FB663546DBDFBD49AC266EF2C /* Pods-JWCalendarExample.debug.xcconfig */,
+				439D1AB7D252DAD46A31A58FC0444D54 /* Pods-JWCalendarExample.release.xcconfig */,
+			);
+			name = "Pods-JWCalendarExample";
+			path = "Target Support Files/Pods-JWCalendarExample";
+			sourceTree = "<group>";
+		};
+		607A59368FA494B9555066A1DF4B4DFA /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F44102109C438802D2450CCE7895217 /* Pods-JWCalendarExample */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				BA340D04274B3AA660AE53DC26DA41BF /* Pods */,
+				8924AF43BC6432E88B9BD31555C55C2C /* Products */,
+				607A59368FA494B9555066A1DF4B4DFA /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8924AF43BC6432E88B9BD31555C55C2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C3B5CB7575D0DE49258F4E16D211679 /* libJWCategory_.a */,
+				82B7A7315D57E19C6CE4BB3B54D09051 /* libPods-JWCalendarExample.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA340D04274B3AA660AE53DC26DA41BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				57D568421D20537BC7893CF247C00D62 /* JWCategory_ */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5B186FF8641F8ECBDB01B187E599F244 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CEF8F79A92C240DEB8BB2AD8D54F87E /* CVKHierarchySearcher.h in Headers */,
+				C55F0597B96379B3EC65958746BD331D /* JWCategory.h in Headers */,
+				6794E88DD7989920FE83E192BBDA821A /* JWUtility.h in Headers */,
+				2CCBDCD61827A844F848765823B4387A /* macro-jw.h in Headers */,
+				663113C7100D7C456C0F198E82298D88 /* NSDate+JW.h in Headers */,
+				C3E9E6CC64AACD6E2D07E9C22604649A /* NSString+JW.h in Headers */,
+				846F2F4A5C9E87D1D0CB78ED8C9C9CFF /* UIBarButtonItem+JW.h in Headers */,
+				35BF3C3DE73A14A3A80B6B99C0621FF0 /* UIButton+JW.h in Headers */,
+				892DF3FCF5549A40DEF5C80C36D4C12E /* UIColor+JW.h in Headers */,
+				7E26C6A3524A35289018CC914AA60C05 /* UIImageView+JW.h in Headers */,
+				837DD3F4821D46758BBD0EC9C9ACB850 /* UILabel+JW.h in Headers */,
+				E38781B06625337763B4EC1A1E443FC4 /* UIView+MJ.h in Headers */,
+				864533D8171006E375735279F660FA48 /* UIViewController+JWTitleView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		225F7C195376B26A254D358CD7AFD233 /* Pods-JWCalendarExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2F622C3BFFC177E9E6CF2E0F33D7D0B /* Build configuration list for PBXNativeTarget "Pods-JWCalendarExample" */;
+			buildPhases = (
+				8AB534D6CACC998349C76D8E658B180F /* Sources */,
+				BF09AA366F2FC4CD52D49A0012DAB058 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E9B59F7CB9364FF03B4372FA11C6C98 /* PBXTargetDependency */,
+			);
+			name = "Pods-JWCalendarExample";
+			productName = "Pods-JWCalendarExample";
+			productReference = 82B7A7315D57E19C6CE4BB3B54D09051 /* libPods-JWCalendarExample.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		86D1FA603AD9C3EF25DCA173C0ECC71E /* JWCategory_ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E268802006A9BB1F24A6865F8E946CA0 /* Build configuration list for PBXNativeTarget "JWCategory_" */;
+			buildPhases = (
+				51C9DC3927735F2AD358611A191B99B2 /* Sources */,
+				082110E2B20AB769AC2BB582C2DAE74D /* Frameworks */,
+				5B186FF8641F8ECBDB01B187E599F244 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JWCategory_;
+			productName = JWCategory_;
+			productReference = 1C3B5CB7575D0DE49258F4E16D211679 /* libJWCategory_.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 8924AF43BC6432E88B9BD31555C55C2C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				86D1FA603AD9C3EF25DCA173C0ECC71E /* JWCategory_ */,
+				225F7C195376B26A254D358CD7AFD233 /* Pods-JWCalendarExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		51C9DC3927735F2AD358611A191B99B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9835B36AC7831DA28BF42E5C8E50ADD /* CVKHierarchySearcher.m in Sources */,
+				11BC778B0690D5FE409D49A30DB07129 /* JWCategory_-dummy.m in Sources */,
+				1A013095476531C1D2A80AADCBF9AD75 /* JWUtility.m in Sources */,
+				4D12B204AF654658AE58971DC6636C92 /* NSDate+JW.m in Sources */,
+				34B3B2ACED3DFC6128E0CD23663EC50C /* NSString+JW.m in Sources */,
+				18781A151E0D887E095B2CF5EC912911 /* UIBarButtonItem+JW.m in Sources */,
+				378B435BF7EAF6DA407F5A01823BA5B6 /* UIButton+JW.m in Sources */,
+				216A1145C840E1737F20C5EF2152F3B1 /* UIColor+JW.m in Sources */,
+				548E9B432EEF86713CC83D91A9F46BF7 /* UIImageView+JW.m in Sources */,
+				9376ABDC3D1E12E4A1709F94BBFC76D6 /* UILabel+JW.m in Sources */,
+				082D138CA25FEA8E0FE868EEB7F3FEEF /* UIView+MJ.m in Sources */,
+				0EEA4CCE69567D638411B4DAC23911D2 /* UIViewController+JWTitleView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AB534D6CACC998349C76D8E658B180F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABB36FF7012EFE9E8D46348F7F64FD2C /* Pods-JWCalendarExample-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E9B59F7CB9364FF03B4372FA11C6C98 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JWCategory_;
+			target = 86D1FA603AD9C3EF25DCA173C0ECC71E /* JWCategory_ */;
+			targetProxy = 309034AF52A8D4AA0D237E433D7989E0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		015A368F878AC3E2CEAE21DDE8026304 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		125254DAC7385204FABE0E23C60FB34A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F3AE72FB663546DBDFBD49AC266EF2C /* Pods-JWCalendarExample.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		22BEB21AF9092EC76E9BEE65E498F1D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64F2C3F7FCCA53498A8D055A52E7B7E5 /* JWCategory_.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JWCategory_/JWCategory_-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		577627F5889C5090DEB0D2DE0D2AA7A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64F2C3F7FCCA53498A8D055A52E7B7E5 /* JWCategory_.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JWCategory_/JWCategory_-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B7C6BB45DB1530426D651497FBA8BA0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 439D1AB7D252DAD46A31A58FC0444D54 /* Pods-JWCalendarExample.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				015A368F878AC3E2CEAE21DDE8026304 /* Debug */,
+				44CDBB6D11DE06DB64D6268622BDC47E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E268802006A9BB1F24A6865F8E946CA0 /* Build configuration list for PBXNativeTarget "JWCategory_" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				577627F5889C5090DEB0D2DE0D2AA7A4 /* Debug */,
+				22BEB21AF9092EC76E9BEE65E498F1D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2F622C3BFFC177E9E6CF2E0F33D7D0B /* Build configuration list for PBXNativeTarget "Pods-JWCalendarExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				125254DAC7385204FABE0E23C60FB34A /* Debug */,
+				B7C6BB45DB1530426D651497FBA8BA0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
