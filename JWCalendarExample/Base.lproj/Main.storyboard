@@ -27,13 +27,64 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFA-GT-COE">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1334"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZvB-y2-rLh">
-                                                <rect key="frame" x="23" y="189" width="329" height="238"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="U5y-SZ-xhs">
+                                                <rect key="frame" x="20" y="136" width="335" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afy-v0-Fla">
+                                                        <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
+                                                        <state key="normal" title="回到今天"/>
+                                                        <connections>
+                                                            <action selector="jumpToday:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aHk-E4-5CL"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMc-qy-Gat">
+                                                        <rect key="frame" x="84" y="0.0" width="83.5" height="30"/>
+                                                        <state key="normal" title="上一月"/>
+                                                        <connections>
+                                                            <action selector="preMonth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xVR-wF-Sn8"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SI3-C8-1uo">
+                                                        <rect key="frame" x="167.5" y="0.0" width="84" height="30"/>
+                                                        <state key="normal" title="下一月"/>
+                                                        <connections>
+                                                            <action selector="nextMonth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rkV-Qe-VCf"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49A-Fj-7Rs">
+                                                        <rect key="frame" x="251.5" y="0.0" width="83.5" height="30"/>
+                                                        <state key="normal" title="变更标记"/>
+                                                        <connections>
+                                                            <action selector="sureButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eee-Pl-ZcY"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgY-B6-N3M" customClass="JWCalendar">
+                                                <rect key="frame" x="10" y="174" width="355" height="246"/>
+                                                <color key="backgroundColor" red="0.83469202899999995" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="246" id="I4W-Yp-Mwe"/>
+                                                </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqL-oi-gRh">
+                                                <rect key="frame" x="20" y="100" width="42" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="QqL-oi-gRh" firstAttribute="top" secondItem="lFA-GT-COE" secondAttribute="top" constant="100" id="9WW-z0-hWr"/>
+                                            <constraint firstAttribute="trailing" secondItem="U5y-SZ-xhs" secondAttribute="trailing" constant="20" id="B1A-lA-08U"/>
+                                            <constraint firstAttribute="trailing" secondItem="tgY-B6-N3M" secondAttribute="trailing" constant="10" id="FTx-Ak-c4Y"/>
+                                            <constraint firstItem="tgY-B6-N3M" firstAttribute="top" secondItem="U5y-SZ-xhs" secondAttribute="bottom" constant="8" id="NZb-Kl-QW2"/>
+                                            <constraint firstItem="tgY-B6-N3M" firstAttribute="leading" secondItem="lFA-GT-COE" secondAttribute="leading" constant="10" id="RY9-Wt-M1g"/>
+                                            <constraint firstItem="U5y-SZ-xhs" firstAttribute="top" secondItem="QqL-oi-gRh" secondAttribute="bottom" constant="15.5" id="qCl-qt-c6S"/>
+                                            <constraint firstItem="QqL-oi-gRh" firstAttribute="leading" secondItem="lFA-GT-COE" secondAttribute="leading" constant="20" id="sCn-Rk-Mqf"/>
+                                            <constraint firstItem="U5y-SZ-xhs" firstAttribute="leading" secondItem="lFA-GT-COE" secondAttribute="leading" constant="20" id="tE4-M8-3Z9"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -44,6 +95,9 @@
                                     <constraint firstAttribute="bottom" secondItem="lFA-GT-COE" secondAttribute="bottom" id="gxo-A7-LW7"/>
                                     <constraint firstItem="lFA-GT-COE" firstAttribute="top" secondItem="01N-yQ-zwh" secondAttribute="top" id="jks-fx-eGL"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cjp-dJ-foW"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -54,10 +108,16 @@
                             <constraint firstAttribute="trailing" secondItem="01N-yQ-zwh" secondAttribute="trailing" id="aVt-y8-2xf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calendar" destination="tgY-B6-N3M" id="iT7-Fn-nq5"/>
+                        <outlet property="calendarHeigthConstraint" destination="I4W-Yp-Mwe" id="RVG-dY-UAC"/>
+                        <outlet property="dateLabel" destination="QqL-oi-gRh" id="rEP-Ex-jhZ"/>
+                        <outlet property="scrollView" destination="01N-yQ-zwh" id="56w-6a-QQJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37.600000000000001" y="39.130434782608695"/>
+            <point key="canvasLocation" x="318" y="47"/>
         </scene>
     </scenes>
 </document>
