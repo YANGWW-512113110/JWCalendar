@@ -29,16 +29,7 @@
     
     self.calendar.delegate = self;
     
-    self.calendar.weekBarFollowSlide = NO;
-    
-    /// 设置标记的日期
-    self.calendar.needMarketDate = [NSMutableSet setWithObjects:@"2017-01-02",@"2017-01-14",@"2017-02-02",@"2017-02-12",@"2016-12-02", nil];
-    
-    //    JWCalendarConfig *config = self.calendar.otherConfig;
-    //
-    //    config.weekBarHeigth = 50.0;
-    
-    
+//    self.calendar.weekBarFollowSlide = NO;
     
 }
 
@@ -50,9 +41,9 @@
 
 - (IBAction)sureButton:(id)sender {
     
-    /// 重新设置标记的日期
-    self.calendar.needMarketDate = [NSMutableSet setWithObjects:@"2017-01-20",@"2017-01-10",@"2017-02-09",@"2017-02-22",@"2016-12-10", nil];
-}
+    [self.calendar refreshMarketData];
+    
+ }
 
 - (IBAction)preMonth:(id)sender {
     
@@ -67,6 +58,7 @@
 - (IBAction)jumpToday:(id)sender {
     [self.calendar jumpToTotay];
 }
+
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
@@ -84,8 +76,8 @@
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"yyyy-MM-dd"];
-    NSTimeZone* GTMzone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    [format setTimeZone:GTMzone];
+//    NSTimeZone* GTMzone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+//    [format setTimeZone:GTMzone];
     self.dateLabel.text = [format stringFromDate:date];
     
     self.calendarHeigthConstraint.constant = calendarHeigth;
@@ -101,6 +93,20 @@
     
 }
 
+
+-(void)calendar:(JWCalendar *)calendar monthView:(MonthView *)monthView{
+
+    
+    // 在此处赋值要标记的日期
+    
+    
+    
+    
+    /// 重新设置标记的日期
+    monthView.needMarketDate = [NSMutableSet setWithObjects:@"2017-01-20",@"2017-01-10",@"2017-02-09",@"2017-02-22",@"2016-12-10", nil];
+
+
+}
 
 
 

@@ -44,7 +44,7 @@
 /// 屏幕方向是否发生变化
 @property (assign,nonatomic) BOOL isStatusBarOrientationChange;
 
-/// scrollview底部约束
+/// scrollview项部约束,用于上称scrollView
 @property (weak,nonatomic) NSLayoutConstraint *scrollViewTopConstraint;
 
 /// 若weekBarFollowSlide为YES时，上、下滑动时需要有一行日期被钉住；设置pegDate后，pegDate所在的行会被钉住；pegDate默认为今天或当前月第一天；
@@ -96,6 +96,7 @@
     self.willStopScrollPoint = 0.0;
     self.backgroundColor = [UIColor clearColor];
     self.monthArray = [NSMutableArray array];
+
 
     /// 创建scrollview
     UIScrollView *scrollView = [[UIScrollView alloc] init];
@@ -282,9 +283,7 @@
         
         view.delegate = self;
         view.config = self.otherConfig;
-        view.needMarketDate = self.needMarketDate;
         view.date = [currentDate additionMonth:i-1];
-        
         
         [self.scrollView addSubview:view];
         [self.monthArray addObject:view];
@@ -305,7 +304,6 @@
         CGFloat y = weekBar.y + self.otherConfig.weekBarHeigth + self.otherConfig.weekBarAndCalendarSpacing;
         WeekCalendar *weekCalendar = [[WeekCalendar alloc] initWithFrame:CGRectMake(weekBar.x,y,self.width,self.otherConfig.dayViewSize.height + self.otherConfig.rowSpacing)];
         weekCalendar.config = self.otherConfig;
-        weekCalendar.needMarketDate = self.needMarketDate;
         weekCalendar.hidden = YES;
         weekCalendar.delegate = self;
         
@@ -393,6 +391,15 @@
     self.initFrame = self.frame;
     
     self.pegDate = monthView.today?monthView.today:date.firstDayOfCurrentMonth;
+    
+    
+    // 获取标记数据
+    if([self.delegate respondsToSelector:@selector(calendar:monthView:)]){
+
+        [self.delegate calendar:self monthView:self.monthArray[0]];
+        [self.delegate calendar:self monthView:self.monthArray[1]];
+        [self.delegate calendar:self monthView:self.monthArray[2]];
+    }
     
 }
 
@@ -493,6 +500,9 @@
     
     // 配置周日历 /////////////////////////////////////////////////////////
     self.weekCalendar.startDate = [pegDate firstDayOfCurrentWeek];
+    
+    
+    
 }
 
 
@@ -593,54 +603,6 @@
     *targetContentOffset = CGPointMake(targetContentOffset->x,y);
 }
 
--(void)setNeedMarketDate:(NSMutableSet<NSString *> *)needMarketDate{
-
-    _needMarketDate = needMarketDate;
-    
-    if(self.weekCalendar){
-        self.weekCalendar.needMarketDate = needMarketDate;
-    }
-    
-    if(!_needMarketDate){
-        return;
-    }
-    
-    /// 标记指定日期
-    if([self.scrollView subviews].count > 0){
-        
-        NSInteger count = self.monthArray.count;
-        
-        for(NSInteger i=0;i<count;i++){
-            
-            self.monthArray[i].needMarketDate = needMarketDate;
-            
-            NSInteger dayCount = self.monthArray[i].dayViewArray.count;
-            
-            // 取消已标记
-            for(NSInteger j=0;j<dayCount;j++){
-                
-                DayView *day = self.monthArray[i].dayViewArray[j];
-                if(day.isMarkedDay){
-                    [day cancelMarked];
-                }
-            }
-            
-            // 重新标记
-            NSMutableDictionary *dic = self.monthArray[i].dateAndDayView;
-            for (NSString *date in needMarketDate) {
-                
-                DayView *dayView = [dic objectForKey:date];
-                if(dayView){
-                   [dayView markedDayAndSetDate:nil];
-                }
-            }
-           
-        }
-    }
-
-}
-
-
 // 回到今天
 -(void)jumpToTotay{
     
@@ -684,6 +646,20 @@
     
     [self.scrollView setContentOffset:CGPointMake(self.willStopScrollPoint, 0) animated:YES];
 
+}
+
+
+-(void)refreshMarketData{
+
+    // 获取标记数据
+    if([self.delegate respondsToSelector:@selector(calendar:monthView:)] && self.monthArray.count > 0){
+        
+        [self.delegate calendar:self monthView:self.monthArray[0]];
+        [self.delegate calendar:self monthView:self.monthArray[1]];
+        [self.delegate calendar:self monthView:self.monthArray[2]];
+    }
+
+    
 }
 
 @end

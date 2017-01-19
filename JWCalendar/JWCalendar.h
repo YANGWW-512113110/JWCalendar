@@ -19,11 +19,17 @@
 
 @protocol JWCalendarDelegate <NSObject>
 
+/// 点击选中某一天时调用
+-(void)calendar:(JWCalendar *)calendar didSelectDate:(NSDate *)date;
+
+
+@optional
+
 /// 滑动日历，减速停止后调用
 -(void)calendarEndDecelerating:(JWCalendar *)calendar currentMonth:(NSDate *)date calendarHeigth:(CGFloat)calendarHeigth;
 
-/// 点击选中某一天时调用
--(void)calendar:(JWCalendar *)calendar didSelectDate:(NSDate *)date;
+/// 获取标记的日期,日期格式必须为：yyyy-MM-dd
+-(void)calendar:(JWCalendar *)calendar monthView:(MonthView *)monthView;
 
 @end
 
@@ -32,8 +38,6 @@
 
 @property (weak,nonatomic) id<JWCalendarDelegate> delegate;
 
-/// 需要标记的日期,日期格式必须为：yyyy-MM-dd; 被标记的日期会被特殊显示;
-@property (strong,nonatomic) NSMutableSet<NSString *> *needMarketDate;
 
 /// 回到今天
 -(void)jumpToTotay;
@@ -43,6 +47,9 @@
 
 /// 下个月
 -(void)nextMonth;
+
+/// 刷新标记数据
+-(void)refreshMarketData;
 
 
 

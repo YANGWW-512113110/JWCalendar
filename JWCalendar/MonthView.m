@@ -13,49 +13,28 @@
 #import "WeekBarView.h"
 #import "JWCalendar.h"
 
-//@interface MonthView()<DayViewDelegat>
-//
-//@property (weak,nonatomic) UIView *mainView;
-//
-//// 行高
-//@property (assign,nonatomic) CGFloat rowHeigth;
-//
-//// 选中行最初的Y值
-//@property (assign,nonatomic) CGFloat selectedRowOriginY;
-//
-//// 当前选中的行
-//@property (weak,nonatomic) UIView *selectedRowView;
-//
-//@property (strong,nonatomic)  NSDateFormatter *dateFormatter;
-
-// 当前页中选中的DayView
-//@property (weak,nonatomic) DayView *currentSelectedDayView;
-
-//@end
-
 @interface MonthView()<DayViewDelegat>
 
+/// 保存日期对应的DayView;日期为key,其格式为:yyyy-MM-dd
+@property (strong,nonatomic) NSMutableDictionary *dateAndDayView;
+
+@property (strong,nonatomic) NSMutableArray<DayView *> *dayViewArray;
 
 /// 当前MonthView的宽度
 @property (assign,nonatomic) CGFloat currentWidth;
 
+
+/// 用于缓存标记的日期；key为yyyy-MM-dd，value为日期数组，数组元素为yyyy-MM-dd；
+@property (strong,nonatomic) NSMutableDictionary *cacheMarkDate;
+
+@property (strong,nonatomic) NSDateFormatter *formatMM;
+
+@property (strong,nonatomic) NSDateFormatter *formatDD;
+
+
 @end
 
 @implementation MonthView
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder{
-    
-    self = [super initWithCoder:aDecoder];
-    
-    if (self) {
-        
-//        [self initUI];
-        
-        [self setupDefaultValues];
-    }
-    
-    return self;
-}
 
 - (instancetype)initWithFrame:(CGRect)frame{
     
@@ -67,26 +46,20 @@
         
         self.dateAndDayView = [NSMutableDictionary dictionary];
         
-//        [self initUI];
+        self.cacheMarkDate = [NSMutableDictionary dictionary];
         
-        [self setupDefaultValues];
+        
+        _formatDD = [[NSDateFormatter alloc] init];
+        [_formatDD setDateFormat:@"yyyy-MM-dd"];
+        NSTimeZone* GTMzone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+        [_formatDD setTimeZone:GTMzone];
+        
+        _formatMM = [[NSDateFormatter alloc] init];
+        [_formatMM setDateFormat:@"MM"];
+
     }
     
     return self;
-}
-
--(void)initUI{
-
-//    UILabel *l = [[UILabel alloc] init];
-//    [self addSubview:l];
-    
-    
-    
-    
-}
-
--(void)setupDefaultValues{
-
 }
 
 -(void)layoutSubviews{
@@ -175,16 +148,14 @@
     [self setMonthHeigthWithRowNumber:rowNumber];
  
     
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    [format setDateFormat:@"MM"];
-    NSInteger dateMonth = [[format stringFromDate:_date] integerValue];
+  
+    NSInteger dateMonth = [[self.formatMM stringFromDate:_date] integerValue];
     
     // 6行7列
     NSInteger dayNumber = rowNumber * 7;
     NSInteger i = 0;
     NSDate *temp = nil;
     NSString *tempString = nil;
-    [format setDateFormat:@"yyyy-MM-dd"];
     [self.dateAndDayView removeAllObjects];
     
     _today = nil;
@@ -194,7 +165,7 @@
         
         temp = [zeroIndexDate additionDay:i];
         
-        tempString = [format stringFromDate:temp];
+        tempString = [self.formatDD stringFromDate:temp];
         
         [self.dateAndDayView setObject:self.dayViewArray[i] forKey:tempString];
         
@@ -216,8 +187,46 @@
         self.dayViewArray[i].hidden = YES;
     }
     
+    NSString *dateString = [self.formatDD stringFromDate:self.date];
+    self.needMarketDate = [self.cacheMarkDate objectForKey:dateString];
 }
 
+-(void)setNeedMarketDate:(NSMutableSet<NSString *> *)needMarketDate{
+
+    _needMarketDate = needMarketDate;
+    
+    /// 标记指定日期
+    if(self.dayViewArray.count > 0){
+
+        NSString *dateString = [self.formatDD stringFromDate:self.date];
+        if(!isEmpty(needMarketDate)){
+            [self.cacheMarkDate setObject:needMarketDate forKey:dateString];
+        }
+        
+        
+        
+        NSInteger dayCount = self.dayViewArray.count;
+        
+        // 取消已标记
+        for(NSInteger j=0;j<dayCount;j++){
+            DayView *day = self.dayViewArray[j];
+            if(day.isMarkedDay){
+                [day cancelMarked];
+            }
+        }
+        
+        // 重新标记
+        NSMutableDictionary *dic = self.dateAndDayView;
+        for (NSString *date in needMarketDate) {
+            
+            DayView *dayView = [dic objectForKey:date];
+            if(dayView){
+                [dayView markedDayAndSetDate:nil];
+            }
+        }
+    }
+    
+}
 
 - (void)updateLayout{
 

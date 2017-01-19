@@ -66,6 +66,8 @@
     [self addSubview:collectionView];
     self.collectionView = collectionView;
     
+    collectionView.backgroundColor = [UIColor whiteColor];
+    
     // 设置contentview相对于scrollView位置
     collectionView.contentInset = UIEdgeInsetsZero;
     
@@ -142,6 +144,7 @@
     NSIndexPath *indexPathNow = [self.collectionView indexPathForItemAtPoint:pInView];
     
     WeekView *week = (WeekView *)[self.collectionView cellForItemAtIndexPath:indexPathNow];
+    week.needMarketDate = self.needMarketDate;
     
     NSDate *date = week.today?week.today:week.startDate;
     
@@ -167,7 +170,6 @@
     _needMarketDate = needMarketDate;
     
     // 动态变更标记
-    
 
 
 }
