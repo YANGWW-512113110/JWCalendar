@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
 
 s.name         = "JWCalendar"
-s.version      = "0.0.2"
+s.version      = "0.0.3"
 s.summary      = "日历控件."
 s.homepage     = "https://github.com/YANGWW-512113110/JWCalendar"
 s.license      = "MIT"
 s.license      = { :type => "MIT", :file => "LICENSE" }
 s.authors             = { "YANGWW" => "512113110@qq.com" }
-s.platform     = :ios,"7.0"
+s.platform     = :ios,"8.0"
 s.source       = { :git => "https://github.com/YANGWW-512113110/JWCalendar.git", :tag => "#{s.version}" }
 s.source_files = "Classes", "JWCalendar/*"
 
