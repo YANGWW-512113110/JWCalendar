@@ -28,8 +28,11 @@
 /// 滑动日历，减速停止后调用
 -(void)calendarEndDecelerating:(JWCalendar *)calendar currentMonth:(NSDate *)date calendarHeigth:(CGFloat)calendarHeigth;
 
-/// 获取标记的日期,日期格式必须为：yyyy-MM-dd
+/// 获取月日历中标记的日期,日期格式必须为：yyyy-MM-dd
 -(void)calendar:(JWCalendar *)calendar monthView:(MonthView *)monthView;
+
+/// 获取周日历中标记的日期,日期格式必须为：yyyy-MM-dd
+-(void)calendar:(JWCalendar *)calendar weekView:(WeekView *)weekView;
 
 @end
 

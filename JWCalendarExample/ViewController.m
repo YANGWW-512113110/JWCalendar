@@ -31,6 +31,8 @@
     
 //    self.calendar.weekBarFollowSlide = NO;
     
+    
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{

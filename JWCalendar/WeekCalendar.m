@@ -105,7 +105,6 @@
     
     WeekView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionReuseIdentifier forIndexPath:indexPath];
     cell.config = self.config;
-    cell.needMarketDate = self.needMarketDate;
     cell.delegate = self;
     
     if(_startDate){
