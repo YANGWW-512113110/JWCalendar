@@ -11,6 +11,7 @@
  */
 #import "DayView.h"
 #import "MonthView.h"
+#import "JWCalendarUtility.h"
 
 
 @interface DayView ()
@@ -256,7 +257,8 @@
         
     }else{
     
-        alert(@"JWCalendar:未知状态");
+        NSString *errorInfo = [NSString stringWithFormat:@"JWCalendar:未知状态；isCurrentMonth:%d,isWeekend:%d,isToday:%d,isSelected:%d,_isMarkedDay:%d",isCurrentMonth,isWeekend,isToday,isSelected,_isMarkedDay];
+        [JWCalendarUtility feedbackExceptionDataWidthExceptionContent:errorInfo];
     }
     
 

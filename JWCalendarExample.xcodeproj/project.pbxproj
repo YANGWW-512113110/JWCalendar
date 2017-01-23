@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C3935F441E358E5700250FFA /* JWCalendarUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C3935F431E358E5700250FFA /* JWCalendarUtility.m */; };
 		C39635191E2F5634004687A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C39635181E2F5634004687A9 /* main.m */; };
 		C396351C1E2F5634004687A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C396351B1E2F5634004687A9 /* AppDelegate.m */; };
 		C396351F1E2F5634004687A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C396351E1E2F5634004687A9 /* ViewController.m */; };
@@ -46,6 +47,8 @@
 		3D7D20011E4FAA9372039F06 /* Pods-JWCalendarExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JWCalendarExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JWCalendarExample/Pods-JWCalendarExample.debug.xcconfig"; sourceTree = "<group>"; };
 		728F228C36E6E460F0AC6DF2 /* Pods-JWCalendarExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JWCalendarExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-JWCalendarExample/Pods-JWCalendarExample.release.xcconfig"; sourceTree = "<group>"; };
 		946E635C609EBBDAA735E00E /* libPods-JWCalendarExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JWCalendarExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3935F421E358E5700250FFA /* JWCalendarUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWCalendarUtility.h; sourceTree = "<group>"; };
+		C3935F431E358E5700250FFA /* JWCalendarUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWCalendarUtility.m; sourceTree = "<group>"; };
 		C39635141E2F5634004687A9 /* JWCalendarExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JWCalendarExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C39635181E2F5634004687A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C396351A1E2F5634004687A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				C39635561E2F5775004687A9 /* WeekCalendar.m */,
 				C39635571E2F5775004687A9 /* WeekView.h */,
 				C39635581E2F5775004687A9 /* WeekView.m */,
+				C3935F421E358E5700250FFA /* JWCalendarUtility.h */,
+				C3935F431E358E5700250FFA /* JWCalendarUtility.m */,
 			);
 			path = JWCalendar;
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C396351F1E2F5634004687A9 /* ViewController.m in Sources */,
+				C3935F441E358E5700250FFA /* JWCalendarUtility.m in Sources */,
 				C39635591E2F5775004687A9 /* DayView.m in Sources */,
 				C396355F1E2F5775004687A9 /* WeekView.m in Sources */,
 				C396355B1E2F5775004687A9 /* JWCalendarConfig.m in Sources */,
