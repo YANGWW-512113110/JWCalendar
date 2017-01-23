@@ -7,9 +7,8 @@
 //
 
 #import "JWCalendarUtility.h"
-#import "SKPSMTPMessage.h"
 
-@interface JWCalendarUtility()<SKPSMTPMessageDelegate>
+@interface JWCalendarUtility()
 
 @end
 
