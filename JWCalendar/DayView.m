@@ -255,6 +255,13 @@
         self.dayLabel.font = self.config.calendarFont;
         self.dayLabel.textColor = [UIColor redColor];
         
+    }else if(isCurrentMonth && isWeekend && isToday && !isSelected && _isMarkedDay){
+        // 被标记的天为今天，且今天是周末
+        
+        self.backgroundColor = [UIColor colorWithRed:0.1922 green:0.6078 blue:1.0 alpha:1.0];
+        self.dayLabel.font = self.config.calendarFont;
+        self.dayLabel.textColor = [UIColor redColor];
+        
     }else{
     
         NSString *errorInfo = [NSString stringWithFormat:@"JWCalendar:未知状态；isCurrentMonth:%d,isWeekend:%d,isToday:%d,isSelected:%d,_isMarkedDay:%d",isCurrentMonth,isWeekend,isToday,isSelected,_isMarkedDay];

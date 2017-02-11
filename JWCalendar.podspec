@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "JWCalendar"
-s.version      = "0.0.5"
+s.version      = "0.0.6"
 s.summary      = "日历控件."
 s.homepage     = "https://github.com/YANGWW-512113110/JWCalendar"
 s.license      = "MIT"
