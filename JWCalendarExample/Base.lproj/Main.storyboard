@@ -1,123 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DSg-dC-ySi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="tqL-fE-xe9">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <navigationController id="DSg-dC-ySi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="r0D-6V-1Ym">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9WA-r1-fSA" kind="relationship" relationship="rootViewController" id="Bi4-oT-M8B"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6e-jv-8ru" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-170" y="30"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="18d-Wc-4wQ">
+            <objects>
+                <viewController id="9WA-r1-fSA" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="kNJ-m0-kSN"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Be-Ap-AxS"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="tZn-ne-d9h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="01N-yQ-zwh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rVY-H6-chG">
+                                <rect key="frame" x="56" y="184" width="263" height="130"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFA-GT-COE">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1334"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="U5y-SZ-xhs">
-                                                <rect key="frame" x="20" y="136" width="335" height="30"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afy-v0-Fla">
-                                                        <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
-                                                        <state key="normal" title="回到今天"/>
-                                                        <connections>
-                                                            <action selector="jumpToday:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aHk-E4-5CL"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMc-qy-Gat">
-                                                        <rect key="frame" x="84" y="0.0" width="83.5" height="30"/>
-                                                        <state key="normal" title="上一月"/>
-                                                        <connections>
-                                                            <action selector="preMonth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xVR-wF-Sn8"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SI3-C8-1uo">
-                                                        <rect key="frame" x="167.5" y="0.0" width="84" height="30"/>
-                                                        <state key="normal" title="下一月"/>
-                                                        <connections>
-                                                            <action selector="nextMonth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rkV-Qe-VCf"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49A-Fj-7Rs">
-                                                        <rect key="frame" x="251.5" y="0.0" width="83.5" height="30"/>
-                                                        <state key="normal" title="变更标记"/>
-                                                        <connections>
-                                                            <action selector="sureButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eee-Pl-ZcY"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgY-B6-N3M" customClass="JWCalendar">
-                                                <rect key="frame" x="10" y="174" width="355" height="246"/>
-                                                <color key="backgroundColor" red="0.83469202899999995" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="246" id="I4W-Yp-Mwe"/>
-                                                </constraints>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqL-oi-gRh">
-                                                <rect key="frame" x="20" y="100" width="42" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="QqL-oi-gRh" firstAttribute="top" secondItem="lFA-GT-COE" secondAttribute="top" constant="100" id="9WW-z0-hWr"/>
-                                            <constraint firstAttribute="trailing" secondItem="U5y-SZ-xhs" secondAttribute="trailing" constant="20" id="B1A-lA-08U"/>
-                                            <constraint firstAttribute="trailing" secondItem="tgY-B6-N3M" secondAttribute="trailing" constant="10" id="FTx-Ak-c4Y"/>
-                                            <constraint firstItem="tgY-B6-N3M" firstAttribute="top" secondItem="U5y-SZ-xhs" secondAttribute="bottom" constant="8" id="NZb-Kl-QW2"/>
-                                            <constraint firstItem="tgY-B6-N3M" firstAttribute="leading" secondItem="lFA-GT-COE" secondAttribute="leading" constant="10" id="RY9-Wt-M1g"/>
-                                            <constraint firstItem="U5y-SZ-xhs" firstAttribute="top" secondItem="QqL-oi-gRh" secondAttribute="bottom" constant="15.5" id="qCl-qt-c6S"/>
-                                            <constraint firstItem="QqL-oi-gRh" firstAttribute="leading" secondItem="lFA-GT-COE" secondAttribute="leading" constant="20" id="sCn-Rk-Mqf"/>
-                                            <constraint firstItem="U5y-SZ-xhs" firstAttribute="leading" secondItem="lFA-GT-COE" secondAttribute="leading" constant="20" id="tE4-M8-3Z9"/>
-                                        </constraints>
-                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xY-ef-zs2">
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
+                                        <state key="normal" title="Demo1_默认"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLi-ZL-91N">
+                                        <rect key="frame" x="0.0" y="50" width="117" height="30"/>
+                                        <state key="normal" title="Demo2_钉住日历"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pM6-9H-jaL">
+                                        <rect key="frame" x="0.0" y="100" width="148" height="30"/>
+                                        <state key="normal" title="Demo3_自定义每一天"/>
+                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="lFA-GT-COE" firstAttribute="height" secondItem="01N-yQ-zwh" secondAttribute="height" multiplier="2:1" id="0ch-md-tHR"/>
-                                    <constraint firstItem="lFA-GT-COE" firstAttribute="width" secondItem="01N-yQ-zwh" secondAttribute="width" id="2TC-vk-bCJ"/>
-                                    <constraint firstItem="lFA-GT-COE" firstAttribute="leading" secondItem="01N-yQ-zwh" secondAttribute="leading" id="3ug-6n-Q4r"/>
-                                    <constraint firstAttribute="trailing" secondItem="lFA-GT-COE" secondAttribute="trailing" id="dNP-6l-dKf"/>
-                                    <constraint firstAttribute="bottom" secondItem="lFA-GT-COE" secondAttribute="bottom" id="gxo-A7-LW7"/>
-                                    <constraint firstItem="lFA-GT-COE" firstAttribute="top" secondItem="01N-yQ-zwh" secondAttribute="top" id="jks-fx-eGL"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cjp-dJ-foW"/>
-                                </connections>
-                            </scrollView>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="01N-yQ-zwh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2I6-Jh-wAU"/>
-                            <constraint firstItem="01N-yQ-zwh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KiX-AY-nie"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="01N-yQ-zwh" secondAttribute="bottom" id="TqQ-Q4-Jb7"/>
-                            <constraint firstAttribute="trailing" secondItem="01N-yQ-zwh" secondAttribute="trailing" id="aVt-y8-2xf"/>
+                            <constraint firstItem="rVY-H6-chG" firstAttribute="top" secondItem="kNJ-m0-kSN" secondAttribute="bottom" constant="120" id="1I0-Vx-cNh"/>
+                            <constraint firstItem="rVY-H6-chG" firstAttribute="leading" secondItem="tZn-ne-d9h" secondAttribute="leadingMargin" constant="40" id="NH5-fG-91j"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rVY-H6-chG" secondAttribute="trailing" constant="40" id="PQU-4i-tXD"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="calendar" destination="tgY-B6-N3M" id="iT7-Fn-nq5"/>
-                        <outlet property="calendarHeigthConstraint" destination="I4W-Yp-Mwe" id="RVG-dY-UAC"/>
-                        <outlet property="dateLabel" destination="QqL-oi-gRh" id="rEP-Ex-jhZ"/>
-                        <outlet property="scrollView" destination="01N-yQ-zwh" id="56w-6a-QQJ"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="6Vs-Hh-xck"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X7N-6r-e5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="318" y="47"/>
+            <point key="canvasLocation" x="670" y="29"/>
         </scene>
     </scenes>
 </document>

@@ -23,6 +23,12 @@
 		C396355D1E2F5775004687A9 /* WeekBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C39635541E2F5775004687A9 /* WeekBarView.m */; };
 		C396355E1E2F5775004687A9 /* WeekCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = C39635561E2F5775004687A9 /* WeekCalendar.m */; };
 		C396355F1E2F5775004687A9 /* WeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = C39635581E2F5775004687A9 /* WeekView.m */; };
+		C398756C1E51421D0083CE7E /* Demo1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C398756A1E51421D0083CE7E /* Demo1ViewController.m */; };
+		C398756D1E51421D0083CE7E /* Demo1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C398756B1E51421D0083CE7E /* Demo1ViewController.xib */; };
+		C39875711E51422E0083CE7E /* Demo2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C398756F1E51422E0083CE7E /* Demo2ViewController.m */; };
+		C39875721E51422E0083CE7E /* Demo2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C39875701E51422E0083CE7E /* Demo2ViewController.xib */; };
+		C39875771E5142510083CE7E /* Demo3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C39875751E5142510083CE7E /* Demo3ViewController.m */; };
+		C39875781E5142510083CE7E /* Demo3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C39875761E5142510083CE7E /* Demo3ViewController.xib */; };
 		D494E28D339410BEBDB9773A /* libPods-JWCalendarExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 946E635C609EBBDAA735E00E /* libPods-JWCalendarExample.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +85,15 @@
 		C39635561E2F5775004687A9 /* WeekCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekCalendar.m; sourceTree = "<group>"; };
 		C39635571E2F5775004687A9 /* WeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekView.h; sourceTree = "<group>"; };
 		C39635581E2F5775004687A9 /* WeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekView.m; sourceTree = "<group>"; };
+		C39875691E51421D0083CE7E /* Demo1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demo1ViewController.h; sourceTree = "<group>"; };
+		C398756A1E51421D0083CE7E /* Demo1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Demo1ViewController.m; sourceTree = "<group>"; };
+		C398756B1E51421D0083CE7E /* Demo1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Demo1ViewController.xib; sourceTree = "<group>"; };
+		C398756E1E51422E0083CE7E /* Demo2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demo2ViewController.h; sourceTree = "<group>"; };
+		C398756F1E51422E0083CE7E /* Demo2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Demo2ViewController.m; sourceTree = "<group>"; };
+		C39875701E51422E0083CE7E /* Demo2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Demo2ViewController.xib; sourceTree = "<group>"; };
+		C39875741E5142510083CE7E /* Demo3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demo3ViewController.h; sourceTree = "<group>"; };
+		C39875751E5142510083CE7E /* Demo3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Demo3ViewController.m; sourceTree = "<group>"; };
+		C39875761E5142510083CE7E /* Demo3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Demo3ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +156,9 @@
 		C39635161E2F5634004687A9 /* JWCalendarExample */ = {
 			isa = PBXGroup;
 			children = (
+				C39875661E5141E20083CE7E /* Demo1_默认 */,
+				C39875671E5141E20083CE7E /* Demo2_钉住日历 */,
+				C39875731E5142430083CE7E /* Demo3_自定义每一天 */,
 				C396351A1E2F5634004687A9 /* AppDelegate.h */,
 				C396351B1E2F5634004687A9 /* AppDelegate.m */,
 				C396351D1E2F5634004687A9 /* ViewController.h */,
@@ -201,6 +219,36 @@
 				C3935F431E358E5700250FFA /* JWCalendarUtility.m */,
 			);
 			path = JWCalendar;
+			sourceTree = "<group>";
+		};
+		C39875661E5141E20083CE7E /* Demo1_默认 */ = {
+			isa = PBXGroup;
+			children = (
+				C39875691E51421D0083CE7E /* Demo1ViewController.h */,
+				C398756A1E51421D0083CE7E /* Demo1ViewController.m */,
+				C398756B1E51421D0083CE7E /* Demo1ViewController.xib */,
+			);
+			path = "Demo1_默认";
+			sourceTree = "<group>";
+		};
+		C39875671E5141E20083CE7E /* Demo2_钉住日历 */ = {
+			isa = PBXGroup;
+			children = (
+				C398756E1E51422E0083CE7E /* Demo2ViewController.h */,
+				C398756F1E51422E0083CE7E /* Demo2ViewController.m */,
+				C39875701E51422E0083CE7E /* Demo2ViewController.xib */,
+			);
+			path = "Demo2_钉住日历";
+			sourceTree = "<group>";
+		};
+		C39875731E5142430083CE7E /* Demo3_自定义每一天 */ = {
+			isa = PBXGroup;
+			children = (
+				C39875741E5142510083CE7E /* Demo3ViewController.h */,
+				C39875751E5142510083CE7E /* Demo3ViewController.m */,
+				C39875761E5142510083CE7E /* Demo3ViewController.xib */,
+			);
+			path = "Demo3_自定义每一天";
 			sourceTree = "<group>";
 		};
 		D2C5545D737582A200A40F58 /* Pods */ = {
@@ -325,8 +373,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C39635271E2F5634004687A9 /* LaunchScreen.storyboard in Resources */,
+				C398756D1E51421D0083CE7E /* Demo1ViewController.xib in Resources */,
 				C39635241E2F5634004687A9 /* Assets.xcassets in Resources */,
 				C39635221E2F5634004687A9 /* Main.storyboard in Resources */,
+				C39875721E51422E0083CE7E /* Demo2ViewController.xib in Resources */,
+				C39875781E5142510083CE7E /* Demo3ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,9 +451,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C396351F1E2F5634004687A9 /* ViewController.m in Sources */,
+				C398756C1E51421D0083CE7E /* Demo1ViewController.m in Sources */,
 				C3935F441E358E5700250FFA /* JWCalendarUtility.m in Sources */,
 				C39635591E2F5775004687A9 /* DayView.m in Sources */,
 				C396355F1E2F5775004687A9 /* WeekView.m in Sources */,
+				C39875771E5142510083CE7E /* Demo3ViewController.m in Sources */,
+				C39875711E51422E0083CE7E /* Demo2ViewController.m in Sources */,
 				C396355B1E2F5775004687A9 /* JWCalendarConfig.m in Sources */,
 				C396351C1E2F5634004687A9 /* AppDelegate.m in Sources */,
 				C396355D1E2F5775004687A9 /* WeekBarView.m in Sources */,

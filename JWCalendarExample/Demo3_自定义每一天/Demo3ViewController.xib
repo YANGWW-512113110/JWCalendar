@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Demo3ViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNK-7a-dgw" customClass="JWCalendar">
+                    <rect key="frame" x="20" y="204" width="335" height="246"/>
+                    <color key="backgroundColor" red="0.83469202899999995" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="246" id="V0S-pe-ich"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HH2-md-6Gj">
+                    <rect key="frame" x="20" y="166" width="335" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9F-G5-vsg">
+                            <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
+                            <state key="normal" title="回到今天"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4k-CR-VvG">
+                            <rect key="frame" x="84" y="0.0" width="83.5" height="30"/>
+                            <state key="normal" title="上一月"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8p5-fw-EBB">
+                            <rect key="frame" x="167.5" y="0.0" width="84" height="30"/>
+                            <state key="normal" title="下一月"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6r6-Wo-xka">
+                            <rect key="frame" x="251.5" y="0.0" width="83.5" height="30"/>
+                            <state key="normal" title="变更标记"/>
+                        </button>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DZ-0u-QE2">
+                    <rect key="frame" x="20" y="130" width="335" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="HH2-md-6Gj" secondAttribute="trailing" constant="20" id="0Jp-bk-zdN"/>
+                <constraint firstItem="2DZ-0u-QE2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="130" id="79K-Wo-q9B"/>
+                <constraint firstItem="2DZ-0u-QE2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="82X-wP-TWo"/>
+                <constraint firstAttribute="trailing" secondItem="eNK-7a-dgw" secondAttribute="trailing" constant="20" id="Bdp-eR-rxA"/>
+                <constraint firstItem="HH2-md-6Gj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="OhT-z2-a9n"/>
+                <constraint firstAttribute="trailing" secondItem="2DZ-0u-QE2" secondAttribute="trailing" constant="20" id="V3k-xN-5RI"/>
+                <constraint firstItem="eNK-7a-dgw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Y4q-lY-LwN"/>
+                <constraint firstItem="eNK-7a-dgw" firstAttribute="top" secondItem="HH2-md-6Gj" secondAttribute="bottom" constant="8" id="meh-d2-unL"/>
+                <constraint firstItem="HH2-md-6Gj" firstAttribute="top" secondItem="2DZ-0u-QE2" secondAttribute="bottom" constant="15.5" id="sPA-dx-s3B"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
