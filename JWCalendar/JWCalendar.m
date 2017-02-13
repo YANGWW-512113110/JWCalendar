@@ -388,6 +388,10 @@
         [self.delegate calendarEndDecelerating:self currentMonth:date calendarHeigth:heigth];
     }
     
+    if([self.delegate respondsToSelector:@selector(calendarMonthChanged:currentMonth:calendarHeigth:)]){
+        [self.delegate calendarMonthChanged:self currentMonth:date calendarHeigth:heigth];
+    }
+    
     self.initFrame = self.frame;
     
     self.pegDate = monthView.today?monthView.today:date.firstDayOfCurrentMonth;

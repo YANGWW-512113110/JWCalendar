@@ -28,50 +28,46 @@
    
     self.calendar.delegate = self;
     
+    // 配置其它选项
+//    JWCalendarConfig *config = self.calendar.otherConfig;
+//    config.weekFontColor = [UIColor redColor];
+    
 }
 
-// 
-- (IBAction)sureButton:(id)sender {
+// 变更标记
+- (IBAction)changeMarketButton:(id)sender {
     
     [self.calendar refreshMarketData];
-    
 }
 
+// 上一月
 - (IBAction)preMonth:(id)sender {
     
     [self.calendar previousMonth];
     
 }
 
+// 下一月
 - (IBAction)nextMonth:(id)sender {
     [self.calendar nextMonth];
 }
 
+// 回到今天
 - (IBAction)jumpToday:(id)sender {
     [self.calendar jumpToTotay];
 }
 
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
-    [self.calendar slideWithScrollView:scrollView];
-    
-}
+#pragma mark JWCalendar delegate
 
--(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
-    
-    [self.calendar slideWidthWillEndDragging:scrollView withVelocity:velocity targetContentOffset:targetContentOffset];
-    
-}
+// 日历中显示的月发生变化时调用
+-(void)calendarMonthChanged:(JWCalendar *)calendar currentMonth:(NSDate *)date calendarHeigth:(CGFloat)calendarHeigth{
 
--(void)calendarEndDecelerating:(JWCalendar *)calendar currentMonth:(NSDate *)date calendarHeigth:(CGFloat)calendarHeigth{
-    
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"yyyy-MM-dd"];
-    //    NSTimeZone* GTMzone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    //    [format setTimeZone:GTMzone];
+
     self.dateLabel.text = [format stringFromDate:date];
-    
+   
     self.calendarHeigthConstraint.constant = calendarHeigth;
     [UIView animateWithDuration:0.25 animations:^{
         [self.view layoutIfNeeded];
@@ -79,19 +75,17 @@
     
 }
 
+// 点击日历中的某一天时调用
 -(void)calendar:(JWCalendar *)calendar didSelectDate:(NSDate *)date{
     
     NSLog(@"selected:%@",date);
     
 }
 
-
+// 数据源，获取日历中需要标记的天
 -(void)calendar:(JWCalendar *)calendar monthView:(MonthView *)monthView{
     
-    
-    // 在此处赋值要标记的日期
-    
-    
+    // 在此处，可以通过接口获取需要标记的日期，然后重新设置标记日期
     
     
     /// 重新设置标记的日期

@@ -25,14 +25,14 @@
 
 @optional
 
+/// 当前显示的月数发生变化时调用；可用于获取当前月，以及显示当前月时日历控件所需要的高度；
+-(void)calendarMonthChanged:(JWCalendar *)calendar currentMonth:(NSDate *)date calendarHeigth:(CGFloat)calendarHeigth;
+
 /// 滑动日历，减速停止后调用
--(void)calendarEndDecelerating:(JWCalendar *)calendar currentMonth:(NSDate *)date calendarHeigth:(CGFloat)calendarHeigth;
+-(void)calendarEndDecelerating:(JWCalendar *)calendar currentMonth:(NSDate *)date calendarHeigth:(CGFloat)calendarHeigth  NS_DEPRECATED_IOS(0.01,0.06,"Implement calendarMonthChanged: currentMonth: calendarHeigth:instead");
 
 /// 获取月日历中标记的日期,日期格式必须为：yyyy-MM-dd
 -(void)calendar:(JWCalendar *)calendar monthView:(MonthView *)monthView;
-
-/// 获取周日历中标记的日期,日期格式必须为：yyyy-MM-dd
--(void)calendar:(JWCalendar *)calendar weekView:(WeekView *)weekView;
 
 @end
 
@@ -51,7 +51,7 @@
 /// 下个月
 -(void)nextMonth;
 
-/// 刷新标记数据
+/// 刷新标记数据,会触发calendar:monthView:方法被调用；
 -(void)refreshMarketData;
 
 

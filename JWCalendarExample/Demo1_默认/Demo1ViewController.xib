@@ -49,7 +49,7 @@
                             <rect key="frame" x="251.5" y="0.0" width="83.5" height="30"/>
                             <state key="normal" title="变更标记"/>
                             <connections>
-                                <action selector="sureButton:" destination="-1" eventType="touchUpInside" id="eKo-Qx-IhC"/>
+                                <action selector="changeMarketButton:" destination="-1" eventType="touchUpInside" id="LPX-E9-Nhh"/>
                             </connections>
                         </button>
                     </subviews>
@@ -79,7 +79,7 @@
                 <constraint firstItem="qnn-Jw-hHX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="130" id="v6r-dy-bBq"/>
                 <constraint firstAttribute="trailing" secondItem="Ci5-jg-F2S" secondAttribute="trailing" constant="20" id="x84-sC-T0O"/>
             </constraints>
-            <point key="canvasLocation" x="-474" y="-8"/>
+            <point key="canvasLocation" x="-877" y="31"/>
         </view>
     </objects>
 </document>
