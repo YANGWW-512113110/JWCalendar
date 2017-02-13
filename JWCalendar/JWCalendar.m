@@ -53,6 +53,8 @@
 /// 被钉住日期在日历中所在的行数
 @property (assign,nonatomic) NSInteger pegDateRow;
 
+/// 外部UIScrollView的初始偏移值
+@property (assign,nonatomic) CGFloat externalScrollViewInitOffset;
 
 @end
 
@@ -315,6 +317,27 @@
     [self initShow];
 }
 
+-(void)setDelegate:(id<JWCalendarDelegate>)delegate{
+
+    _delegate = delegate;
+    
+    if(delegate){
+        
+        UIViewController *vc = (UIViewController *)delegate;
+        
+        // 外部VC的edgesForExtendedLayout属性设置直接影响日历控件的上、下偏移是否正确执行；
+        // 因为edgesForExtendedLayout中包含UIRectEdgeTop时，VC中的UIScrollView偏移自动被系统置为-64；
+        
+        // 根据外部VC的edgesForExtendedLayout来设置日历控件上、下偏移的基准
+        if(vc.edgesForExtendedLayout && UIRectEdgeTop){
+            self.externalScrollViewInitOffset = -64;
+        }else{
+            self.externalScrollViewInitOffset = 0;
+        }
+    
+    }
+
+}
 
 #pragma mark self.scrollView代理
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -368,6 +391,9 @@
 // 月日历减速停止后调用 - 人为拖动触发
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     
+    if(self.monthArray && [self.monthArray count] == 0){
+        return;
+    }
     
     MonthView *monthView = self.monthArray[1];
     
@@ -513,6 +539,7 @@
 }
 
 
+
 #pragma mark 外部调用
 /// 外部UIScrollView或继承自UIScrollView的控件调用，用于钉住周日历和周bar
 -(void)slideWithScrollView:(UIScrollView *)scrollView{
@@ -521,21 +548,24 @@
         return;
     }
     
-    if(scrollView.contentOffset.y > 0){
+    // 钉住周bar、显示周日历、更新周日历frame.Y、上/下偏移ScrollView、更新日历高度
+    
+    if(scrollView.contentOffset.y >  self.externalScrollViewInitOffset){
         
         // 日历控件的最小高度
         CGFloat minimumHeigth = self.otherConfig.weekBarHeigth + self.otherConfig.weekBarAndCalendarSpacing + self.otherConfig.dayViewSize.height + self.otherConfig.bottomMargin;
         
         // self位置保持不变
-        CGFloat y = scrollView.contentOffset.y + self.initFrame.origin.y;
+        CGFloat y = scrollView.contentOffset.y - self.externalScrollViewInitOffset + self.initFrame.origin.y;
         
         // 修改self高度
         CGFloat height = self.initFrame.size.height - scrollView.contentOffset.y;
-        CGFloat scrollViewContentOffsetY = scrollView.contentOffset.y;
         if(height <= minimumHeigth){
             height = minimumHeigth;
         }
         self.frame = CGRectMake(self.x, y,self.width,height);
+        
+        CGFloat scrollViewContentOffsetY = scrollView.contentOffset.y - self.externalScrollViewInitOffset;
         
         // 设置self.scrollView上下偏移
         self.scrollViewTopConstraint.constant = -scrollViewContentOffsetY;
@@ -570,7 +600,7 @@
         self.weekCalendar.hidden = YES;
     }
     
-    if(scrollView.contentOffset.y == 0){
+    if(scrollView.contentOffset.y == self.externalScrollViewInitOffset ){
         [self scrollViewDidEndDecelerating:self.scrollView];
     }
  
@@ -589,16 +619,17 @@
     CGFloat monthHeigth = monthView.monthViewHeigth;
     
     
-    CGFloat y = 0.0;
+    CGFloat y = self.externalScrollViewInitOffset;
     
     // 偏移控制范围；scrollView偏移目标停止位置为此范围内时控制；超出此范围时不控制；
     CGFloat range = monthHeigth - (self.otherConfig.dayViewSize.height + self.otherConfig.rowSpacing);
     
-    if(targetRect.origin.y > range){
+    CGFloat offsetRange = targetRect.origin.y - self.externalScrollViewInitOffset;
+    if(offsetRange > range){
         return;
     }
     
-    if(targetRect.origin.y >= range/2.0){
+    if(offsetRange >= range/2.0){
         
         // 日历控件的最小高度
         CGFloat minimumHeigth = self.otherConfig.weekBarHeigth + self.otherConfig.weekBarAndCalendarSpacing + self.otherConfig.dayViewSize.height + self.otherConfig.bottomMargin;

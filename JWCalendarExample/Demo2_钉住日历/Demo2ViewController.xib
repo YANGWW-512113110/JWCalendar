@@ -23,10 +23,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFf-E5-a8l">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qr8-Xx-Csd">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="1334"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1206"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aJa-jf-GTC">
                                     <rect key="frame" x="20" y="136" width="335" height="30"/>
@@ -106,7 +106,7 @@
                 <constraint firstAttribute="trailing" secondItem="tFf-E5-a8l" secondAttribute="trailing" id="22J-44-1cG"/>
                 <constraint firstAttribute="bottom" secondItem="tFf-E5-a8l" secondAttribute="bottom" id="MNy-H8-Tbz"/>
                 <constraint firstItem="tFf-E5-a8l" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Vc0-T0-M2p"/>
-                <constraint firstItem="tFf-E5-a8l" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="g2i-de-Ycd"/>
+                <constraint firstItem="tFf-E5-a8l" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="g2i-de-Ycd"/>
             </constraints>
             <point key="canvasLocation" x="-439" y="-62"/>
         </view>

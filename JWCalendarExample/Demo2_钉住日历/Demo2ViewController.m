@@ -38,6 +38,10 @@
     //    JWCalendarConfig *config = self.calendar.otherConfig;
     //    config.weekFontColor = [UIColor redColor];
     
+    
+//    [self setEdgesForExtendedLayout:UIRectEdgeLeft | UIRectEdgeBottom | UIRectEdgeRight | UIRectEdgeTop];
+
+    NSLog(@"%lu",self.edgesForExtendedLayout & 1);
 }
 
 - (IBAction)changeMarketButton:(id)sender {
@@ -60,6 +64,12 @@
     [self.calendar jumpToTotay];
 }
 
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+
+    NSLog(@"will:%f",scrollView.contentOffset.y);
+
+}
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
