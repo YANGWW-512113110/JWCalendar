@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Demo2ViewController">
             <connections>
+                <outlet property="calendar" destination="xBO-WL-t42" id="biH-MS-mLv"/>
+                <outlet property="calendarHeigthConstraint" destination="Xfg-e5-pnc" id="t7e-PA-1xB"/>
+                <outlet property="dateLabel" destination="uzO-YC-XJc" id="fAW-h2-9aI"/>
+                <outlet property="scrollView" destination="tFf-E5-a8l" id="QDJ-TY-DMU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,88 +23,90 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRj-D9-jHo">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFf-E5-a8l">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tFf-E5-a8l">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qr8-Xx-Csd">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1334"/>
                             <subviews>
-                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qr8-Xx-Csd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1334"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aJa-jf-GTC">
+                                    <rect key="frame" x="20" y="136" width="335" height="30"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aJa-jf-GTC">
-                                            <rect key="frame" x="20" y="136" width="335" height="30"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrg-qb-YgU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
-                                                    <state key="normal" title="回到今天"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4T-jm-y5T">
-                                                    <rect key="frame" x="84" y="0.0" width="83.5" height="30"/>
-                                                    <state key="normal" title="上一月"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bc-pZ-ozl">
-                                                    <rect key="frame" x="167.5" y="0.0" width="84" height="30"/>
-                                                    <state key="normal" title="下一月"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qy9-11-79K">
-                                                    <rect key="frame" x="251.5" y="0.0" width="83.5" height="30"/>
-                                                    <state key="normal" title="变更标记"/>
-                                                </button>
-                                            </subviews>
-                                        </stackView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBO-WL-t42" customClass="JWCalendar">
-                                            <rect key="frame" x="10" y="174" width="355" height="246"/>
-                                            <color key="backgroundColor" red="0.83469202899999995" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="246" id="Xfg-e5-pnc"/>
-                                            </constraints>
-                                        </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzO-YC-XJc">
-                                            <rect key="frame" x="20" y="100" width="42" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrg-qb-YgU">
+                                            <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
+                                            <state key="normal" title="回到今天"/>
+                                            <connections>
+                                                <action selector="jumpToday:" destination="-1" eventType="touchUpInside" id="GtT-qv-6SU"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4T-jm-y5T">
+                                            <rect key="frame" x="84" y="0.0" width="83.5" height="30"/>
+                                            <state key="normal" title="上一月"/>
+                                            <connections>
+                                                <action selector="preMonth:" destination="-1" eventType="touchUpInside" id="A2B-v0-bAX"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bc-pZ-ozl">
+                                            <rect key="frame" x="167.5" y="0.0" width="84" height="30"/>
+                                            <state key="normal" title="下一月"/>
+                                            <connections>
+                                                <action selector="nextMonth:" destination="-1" eventType="touchUpInside" id="9cd-V7-b73"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qy9-11-79K">
+                                            <rect key="frame" x="251.5" y="0.0" width="83.5" height="30"/>
+                                            <state key="normal" title="变更标记"/>
+                                            <connections>
+                                                <action selector="sureButton:" destination="-1" eventType="touchUpInside" id="caG-Ta-53y"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBO-WL-t42" customClass="JWCalendar">
+                                    <rect key="frame" x="10" y="174" width="355" height="246"/>
+                                    <color key="backgroundColor" red="0.83469202899999995" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstItem="xBO-WL-t42" firstAttribute="top" secondItem="aJa-jf-GTC" secondAttribute="bottom" constant="8" id="1y1-Sc-Doz"/>
-                                        <constraint firstItem="uzO-YC-XJc" firstAttribute="leading" secondItem="qr8-Xx-Csd" secondAttribute="leading" constant="20" id="K4F-DD-7A3"/>
-                                        <constraint firstItem="uzO-YC-XJc" firstAttribute="top" secondItem="qr8-Xx-Csd" secondAttribute="top" constant="100" id="Rwl-EU-jbW"/>
-                                        <constraint firstItem="aJa-jf-GTC" firstAttribute="top" secondItem="uzO-YC-XJc" secondAttribute="bottom" constant="15.5" id="Tyj-lj-VEq"/>
-                                        <constraint firstItem="xBO-WL-t42" firstAttribute="leading" secondItem="qr8-Xx-Csd" secondAttribute="leading" constant="10" id="Y26-3X-Lcg"/>
-                                        <constraint firstAttribute="trailing" secondItem="xBO-WL-t42" secondAttribute="trailing" constant="10" id="cja-Os-6rN"/>
-                                        <constraint firstItem="aJa-jf-GTC" firstAttribute="leading" secondItem="qr8-Xx-Csd" secondAttribute="leading" constant="20" id="eLn-v6-oCw"/>
-                                        <constraint firstAttribute="trailing" secondItem="aJa-jf-GTC" secondAttribute="trailing" constant="20" id="n6t-Tv-pcf"/>
+                                        <constraint firstAttribute="height" constant="246" id="Xfg-e5-pnc"/>
                                     </constraints>
                                 </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzO-YC-XJc">
+                                    <rect key="frame" x="20" y="100" width="42" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="qr8-Xx-Csd" firstAttribute="leading" secondItem="tFf-E5-a8l" secondAttribute="leading" id="7wk-cE-K8F"/>
-                                <constraint firstItem="qr8-Xx-Csd" firstAttribute="width" secondItem="tFf-E5-a8l" secondAttribute="width" id="MPy-0g-QF3"/>
-                                <constraint firstAttribute="trailing" secondItem="qr8-Xx-Csd" secondAttribute="trailing" id="cJL-DP-JfY"/>
-                                <constraint firstItem="qr8-Xx-Csd" firstAttribute="top" secondItem="tFf-E5-a8l" secondAttribute="top" id="fDe-t1-4CK"/>
-                                <constraint firstItem="qr8-Xx-Csd" firstAttribute="height" secondItem="tFf-E5-a8l" secondAttribute="height" multiplier="2:1" id="hm0-Cm-LBr"/>
-                                <constraint firstAttribute="bottom" secondItem="qr8-Xx-Csd" secondAttribute="bottom" id="wLt-dH-WSc"/>
+                                <constraint firstItem="xBO-WL-t42" firstAttribute="top" secondItem="aJa-jf-GTC" secondAttribute="bottom" constant="8" id="1y1-Sc-Doz"/>
+                                <constraint firstItem="uzO-YC-XJc" firstAttribute="leading" secondItem="qr8-Xx-Csd" secondAttribute="leading" constant="20" id="K4F-DD-7A3"/>
+                                <constraint firstItem="uzO-YC-XJc" firstAttribute="top" secondItem="qr8-Xx-Csd" secondAttribute="top" constant="100" id="Rwl-EU-jbW"/>
+                                <constraint firstItem="aJa-jf-GTC" firstAttribute="top" secondItem="uzO-YC-XJc" secondAttribute="bottom" constant="15.5" id="Tyj-lj-VEq"/>
+                                <constraint firstItem="xBO-WL-t42" firstAttribute="leading" secondItem="qr8-Xx-Csd" secondAttribute="leading" constant="10" id="Y26-3X-Lcg"/>
+                                <constraint firstAttribute="trailing" secondItem="xBO-WL-t42" secondAttribute="trailing" constant="10" id="cja-Os-6rN"/>
+                                <constraint firstItem="aJa-jf-GTC" firstAttribute="leading" secondItem="qr8-Xx-Csd" secondAttribute="leading" constant="20" id="eLn-v6-oCw"/>
+                                <constraint firstAttribute="trailing" secondItem="aJa-jf-GTC" secondAttribute="trailing" constant="20" id="n6t-Tv-pcf"/>
                             </constraints>
-                        </scrollView>
+                        </view>
                     </subviews>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="tFf-E5-a8l" secondAttribute="trailing" id="1zW-77-oEG"/>
-                        <constraint firstItem="tFf-E5-a8l" firstAttribute="leading" secondItem="qRj-D9-jHo" secondAttribute="leading" id="RGY-9V-FP5"/>
-                        <constraint firstItem="tFf-E5-a8l" firstAttribute="top" secondItem="qRj-D9-jHo" secondAttribute="top" id="wh4-9k-cBK"/>
+                        <constraint firstItem="qr8-Xx-Csd" firstAttribute="leading" secondItem="tFf-E5-a8l" secondAttribute="leading" id="7wk-cE-K8F"/>
+                        <constraint firstItem="qr8-Xx-Csd" firstAttribute="width" secondItem="tFf-E5-a8l" secondAttribute="width" id="MPy-0g-QF3"/>
+                        <constraint firstAttribute="trailing" secondItem="qr8-Xx-Csd" secondAttribute="trailing" id="cJL-DP-JfY"/>
+                        <constraint firstItem="qr8-Xx-Csd" firstAttribute="top" secondItem="tFf-E5-a8l" secondAttribute="top" id="fDe-t1-4CK"/>
+                        <constraint firstItem="qr8-Xx-Csd" firstAttribute="height" secondItem="tFf-E5-a8l" secondAttribute="height" multiplier="2:1" id="hm0-Cm-LBr"/>
+                        <constraint firstAttribute="bottom" secondItem="qr8-Xx-Csd" secondAttribute="bottom" id="wLt-dH-WSc"/>
                     </constraints>
-                </view>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="qRj-D9-jHo" secondAttribute="bottom" id="182-fn-Z7O"/>
-                <constraint firstAttribute="trailing" secondItem="qRj-D9-jHo" secondAttribute="trailing" id="JTc-hT-o6h"/>
-                <constraint firstItem="qRj-D9-jHo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TJw-Eb-CyM"/>
-                <constraint firstItem="qRj-D9-jHo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Zz7-MI-dPE"/>
+                <constraint firstAttribute="trailing" secondItem="tFf-E5-a8l" secondAttribute="trailing" id="22J-44-1cG"/>
+                <constraint firstAttribute="bottom" secondItem="tFf-E5-a8l" secondAttribute="bottom" id="MNy-H8-Tbz"/>
+                <constraint firstItem="tFf-E5-a8l" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Vc0-T0-M2p"/>
+                <constraint firstItem="tFf-E5-a8l" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="g2i-de-Ycd"/>
             </constraints>
+            <point key="canvasLocation" x="-44" y="-2"/>
         </view>
     </objects>
 </document>

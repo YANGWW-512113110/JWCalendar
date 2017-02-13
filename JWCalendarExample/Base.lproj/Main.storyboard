@@ -43,14 +43,23 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xY-ef-zs2">
                                         <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
                                         <state key="normal" title="Demo1_默认"/>
+                                        <connections>
+                                            <action selector="demo1:" destination="9WA-r1-fSA" eventType="touchUpInside" id="B7T-7L-aCb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLi-ZL-91N">
                                         <rect key="frame" x="0.0" y="50" width="117" height="30"/>
                                         <state key="normal" title="Demo2_钉住日历"/>
+                                        <connections>
+                                            <action selector="demo2:" destination="9WA-r1-fSA" eventType="touchUpInside" id="8j1-r7-6wh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pM6-9H-jaL">
                                         <rect key="frame" x="0.0" y="100" width="148" height="30"/>
                                         <state key="normal" title="Demo3_自定义每一天"/>
+                                        <connections>
+                                            <action selector="demo3:" destination="9WA-r1-fSA" eventType="touchUpInside" id="gMj-45-AHt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

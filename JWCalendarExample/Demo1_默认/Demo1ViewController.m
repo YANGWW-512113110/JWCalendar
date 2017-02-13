@@ -23,17 +23,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"默认";
    
     self.calendar.delegate = self;
     
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    
-    [super viewDidAppear:animated];
-    
-}
-
+// 
 - (IBAction)sureButton:(id)sender {
     
     [self.calendar refreshMarketData];

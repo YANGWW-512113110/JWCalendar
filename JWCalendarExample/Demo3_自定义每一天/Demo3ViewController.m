@@ -16,7 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.title = @"自定义每一天";
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
