@@ -14,7 +14,6 @@
                 <outlet property="calendar" destination="xBO-WL-t42" id="biH-MS-mLv"/>
                 <outlet property="calendarHeigthConstraint" destination="Xfg-e5-pnc" id="t7e-PA-1xB"/>
                 <outlet property="dateLabel" destination="uzO-YC-XJc" id="fAW-h2-9aI"/>
-                <outlet property="scrollView" destination="tFf-E5-a8l" id="QDJ-TY-DMU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -57,7 +56,7 @@
                                             <rect key="frame" x="251.5" y="0.0" width="83.5" height="30"/>
                                             <state key="normal" title="变更标记"/>
                                             <connections>
-                                                <action selector="sureButton:" destination="-1" eventType="touchUpInside" id="caG-Ta-53y"/>
+                                                <action selector="changeMarketButton:" destination="-1" eventType="touchUpInside" id="OTc-Bm-fsU"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -97,6 +96,9 @@
                         <constraint firstItem="qr8-Xx-Csd" firstAttribute="height" secondItem="tFf-E5-a8l" secondAttribute="height" multiplier="2:1" id="hm0-Cm-LBr"/>
                         <constraint firstAttribute="bottom" secondItem="qr8-Xx-Csd" secondAttribute="bottom" id="wLt-dH-WSc"/>
                     </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="hhq-uS-OeR"/>
+                    </connections>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -106,7 +108,7 @@
                 <constraint firstItem="tFf-E5-a8l" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Vc0-T0-M2p"/>
                 <constraint firstItem="tFf-E5-a8l" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="g2i-de-Ycd"/>
             </constraints>
-            <point key="canvasLocation" x="-44" y="-2"/>
+            <point key="canvasLocation" x="-439" y="-62"/>
         </view>
     </objects>
 </document>

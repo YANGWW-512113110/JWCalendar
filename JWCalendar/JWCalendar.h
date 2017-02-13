@@ -58,7 +58,7 @@
 
 #pragma mark 功能配置
 
-/// 上下滑动时，周bar是否跟随滑动；默认不跟随。此选项只有当此控件处于UIScrollview、UITbleView中时才有效；
+/// 上下滑动时，周bar是否跟随滑动；默认为YES，即跟随滑动。此选项只有当此控件处于UIScrollview、UITbleView中时才有效；
 @property (assign,nonatomic) BOOL weekBarFollowSlide;
 
 /// 若weekBarFollowSlide为YES,则需要在代理方法scrollViewDidScroll:中调用此方法

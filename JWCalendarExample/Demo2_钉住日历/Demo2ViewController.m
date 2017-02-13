@@ -11,8 +11,6 @@
 
 @interface Demo2ViewController ()<UIScrollViewDelegate,JWCalendarDelegate>
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-
 @property (weak, nonatomic) IBOutlet JWCalendar *calendar;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarHeigthConstraint;
@@ -31,19 +29,18 @@
     
     self.title = @"钉住日历";
     
-    //    self.calendar.weekBarFollowSlide = NO;
+    // 钉住周
+    self.calendar.weekBarFollowSlide = NO;
     
+    self.calendar.delegate = self;
     
+    // 配置其它选项
+    //    JWCalendarConfig *config = self.calendar.otherConfig;
+    //    config.weekFontColor = [UIColor redColor];
     
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    
-    [super viewDidAppear:animated];
-    
-}
-
-- (IBAction)sureButton:(id)sender {
+- (IBAction)changeMarketButton:(id)sender {
     
     [self.calendar refreshMarketData];
     
@@ -76,12 +73,15 @@
     
 }
 
--(void)calendarEndDecelerating:(JWCalendar *)calendar currentMonth:(NSDate *)date calendarHeigth:(CGFloat)calendarHeigth{
+
+#pragma mark JWCalendar delegate
+
+// 日历中显示的月发生变化时调用
+-(void)calendarMonthChanged:(JWCalendar *)calendar currentMonth:(NSDate *)date calendarHeigth:(CGFloat)calendarHeigth{
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"yyyy-MM-dd"];
-    //    NSTimeZone* GTMzone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    //    [format setTimeZone:GTMzone];
+    
     self.dateLabel.text = [format stringFromDate:date];
     
     self.calendarHeigthConstraint.constant = calendarHeigth;
@@ -91,24 +91,20 @@
     
 }
 
+// 点击日历中的某一天时调用
 -(void)calendar:(JWCalendar *)calendar didSelectDate:(NSDate *)date{
     
     NSLog(@"selected:%@",date);
     
 }
 
-
+// 数据源，获取日历中需要标记的天
 -(void)calendar:(JWCalendar *)calendar monthView:(MonthView *)monthView{
     
-    
-    // 在此处赋值要标记的日期
-    
-    
-    
+    // 在此处，可以通过接口获取需要标记的日期，然后重新设置标记日期
     
     /// 重新设置标记的日期
     monthView.needMarketDate = [NSMutableSet setWithObjects:@"2017-01-20",@"2017-01-10",@"2017-02-09",@"2017-02-22",@"2016-12-10", nil];
-    
     
 }
 

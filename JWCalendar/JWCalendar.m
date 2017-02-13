@@ -47,7 +47,7 @@
 /// scrollview项部约束,用于上称scrollView
 @property (weak,nonatomic) NSLayoutConstraint *scrollViewTopConstraint;
 
-/// 若weekBarFollowSlide为YES时，上、下滑动时需要有一行日期被钉住；设置pegDate后，pegDate所在的行会被钉住；pegDate默认为今天或当前月第一天；
+/// 若weekBarFollowSlide为NO时，上、下滑动时需要有一行日期被钉住；设置pegDate后，pegDate所在的行会被钉住；pegDate默认为今天或当前月第一天；
 @property (strong,nonatomic) NSDate *pegDate;
 
 /// 被钉住日期在日历中所在的行数
@@ -300,7 +300,7 @@
     self.weekBar = weekBar;
     
     // 创建周日历
-    if(self.weekBarFollowSlide){
+    if(!self.weekBarFollowSlide){
         CGFloat y = weekBar.y + self.otherConfig.weekBarHeigth + self.otherConfig.weekBarAndCalendarSpacing;
         WeekCalendar *weekCalendar = [[WeekCalendar alloc] initWithFrame:CGRectMake(weekBar.x,y,self.width,self.otherConfig.dayViewSize.height + self.otherConfig.rowSpacing)];
         weekCalendar.config = self.otherConfig;
@@ -517,7 +517,7 @@
 /// 外部UIScrollView或继承自UIScrollView的控件调用，用于钉住周日历和周bar
 -(void)slideWithScrollView:(UIScrollView *)scrollView{
     
-    if(!self.weekBarFollowSlide){
+    if(self.weekBarFollowSlide){
         return;
     }
     
@@ -579,7 +579,7 @@
 /// 外部UIScrollView或继承自UIScrollView的控件调用，用于使滑动停留在合适的位置
 - (void)slideWidthWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
     
-    if(!self.weekBarFollowSlide){
+    if(self.weekBarFollowSlide){
         return;
     }
     
