@@ -1,5 +1,8 @@
 Pod::Spec.new do |s|
 
+#  pod lib lint JWCalendar.podspec --allow-warnings --use-libraries
+#  pod trunk push JWCalendar.podspec --allow-warnings --use-libraries
+
 s.name         = "JWCalendar"
 s.version      = "0.0.7"
 s.summary      = "日历控件."
