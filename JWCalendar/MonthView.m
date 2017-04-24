@@ -47,12 +47,9 @@
         self.dateAndDayView = [NSMutableDictionary dictionary];
         
         self.cacheMarkDate = [NSMutableDictionary dictionary];
-        
-        
+               
         _formatDD = [[NSDateFormatter alloc] init];
         [_formatDD setDateFormat:@"yyyy-MM-dd"];
-        NSTimeZone* GTMzone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-        [_formatDD setTimeZone:GTMzone];
         
         _formatMM = [[NSDateFormatter alloc] init];
         [_formatMM setDateFormat:@"MM"];

@@ -55,9 +55,7 @@
     
     NSDateFormatter * formatter = [[NSDateFormatter alloc ] init];
     [formatter setDateFormat:@"YYYY-MM-dd hh:mm:ss:SSS"];
-    
     [formatter setTimeZone:[NSTimeZone systemTimeZone]];
-    //    [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]]; //指定时区
     
     NSString *date =  [formatter stringFromDate:[NSDate date]];
     NSString *timeLocal = [[NSString alloc] initWithFormat:@"%@", date];
@@ -105,7 +103,8 @@
     
     NSAssert1(ok, @"Failed to calculate the first day of the month based on %@", self);
     
-    return [NSDate convertDateToSystemZone:startDate];
+    return startDate;
+//    return [NSDate convertDateToSystemZone:startDate];
 }
 
 
@@ -125,7 +124,29 @@
     
     NSAssert1(ok, @"Failed to calculate the first day of the month based on %@", self);
     
-    return [NSDate convertDateToSystemZone:startDate];
+    
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSWeekCalendarUnit |NSWeekOfMonthCalendarUnit | NSWeekOfYearCalendarUnit;
+    
+    comps = [[NSCalendar currentCalendar] components:unitFlags fromDate:self];
+    
+//    NSLog(@"%ld年",(long)[comps year]);
+//    NSLog(@"%ld月",(long)[comps month]);
+//    NSLog(@"%ld日",(long)[comps day]);
+//    NSLog(@"%ld时",(long)[comps hour]);
+//    NSLog(@"%ld分",(long)[comps minute]);
+//    NSLog(@"%ld秒",(long)[comps second]);
+    
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    dateComponents.hour = [comps hour];
+    dateComponents.minute = [comps minute];
+    dateComponents.second = [comps second];
+    
+    NSDate *date = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:startDate options:0];
+    
+    
+    return date;
+//    return [NSDate convertDateToSystemZone:startDate];
 }
 
 
@@ -199,11 +220,9 @@
     NSDate *date = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:self.firstDayOfCurrentMonth options:0];
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    [format setDateFormat:@"yyyy-MM-dd"];
+    [format setDateFormat:@"YYYY-MM-dd hh:mm:ss:SSS"];
     
-    
-    NSTimeZone* GTMzone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    [format setTimeZone:GTMzone];
+    [format setTimeZone:[NSTimeZone systemTimeZone]];
     
     // stringFromDate默认将时间转为本地时区的字符串，即+8
     // dateFromString默认将字符串转为0时区的date

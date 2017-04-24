@@ -16,6 +16,10 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarHeigthConstraint;
 
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timezone;
+@property (weak, nonatomic) IBOutlet UILabel *timezoneid;
+@property (weak, nonatomic) IBOutlet UILabel *currentDate;
+@property (weak, nonatomic) IBOutlet UILabel *currentSelectedDate;
 
 @end
 
@@ -25,7 +29,8 @@
     [super viewDidLoad];
     
     self.title = @"默认";
-   
+    self.currentSelectedDate.text = nil;
+    
     self.calendar.delegate = self;
     
     // 配置其它选项
@@ -33,6 +38,20 @@
 //    config.weekFontColor = [UIColor redColor];
     
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+
+    [super viewWillAppear:animated];
+    
+    NSTimeZone *zone = [NSTimeZone systemTimeZone]; // 获得系统时区
+    self.timezone.text = zone.abbreviation;
+    self.timezoneid.text = zone.name;
+    
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    self.currentDate.text = [format stringFromDate:[NSDate date]];
+}
+
 
 // 变更标记
 - (IBAction)changeMarketButton:(id)sender {
@@ -78,8 +97,9 @@
 // 点击日历中的某一天时调用
 -(void)calendar:(JWCalendar *)calendar didSelectDate:(NSDate *)date{
     
-    NSLog(@"selected:%@",date);
-    
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    self.currentSelectedDate.text = [format stringFromDate:date];
 }
 
 // 数据源，获取日历中需要标记的天

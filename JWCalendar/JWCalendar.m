@@ -278,7 +278,7 @@
     
     NSInteger i=0;
     [self.monthArray removeAllObjects];
-    NSDate *currentDate = [NSDate currentDate];
+    NSDate *currentDate = [NSDate date];
     for(;i<3;i++){
         
         MonthView *view = [[MonthView alloc] initWithFrame:CGRectMake(i*self.width + baseOffset,0,self.width, self.height)];
@@ -411,6 +411,7 @@
     CGFloat heigth = monthHeigth + self.otherConfig.weekBarAndCalendarSpacing + self.otherConfig.weekBarHeigth;
     
     if([self.delegate respondsToSelector:@selector(calendarEndDecelerating:currentMonth:calendarHeigth:)]){
+        #pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [self.delegate calendarEndDecelerating:self currentMonth:date calendarHeigth:heigth];
     }
     
@@ -645,7 +646,7 @@
 -(void)jumpToTotay{
     
     NSInteger count = self.monthArray.count;
-    NSDate *currentDate = [NSDate currentDate];
+    NSDate *currentDate = [NSDate date];
     
     for(NSInteger i=0;i<count;i++){
         
