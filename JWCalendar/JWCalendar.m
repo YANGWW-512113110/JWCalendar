@@ -124,6 +124,13 @@
    
 }
 
+-(void)timeZoneDidChange:(NSNotification *) notification {
+    
+    NSDate *currentDate = [NSDate date];
+    for(NSInteger i=0;i<3;i++){
+        self.monthArray[i].date = [currentDate additionMonth:i-1];
+    }  
+}
 
 
 - (void)setupDefaultValues{
@@ -131,6 +138,11 @@
     self.weekBarFollowSlide = YES;
     
     _otherConfig = [[JWCalendarConfig alloc] init];
+    
+    // 通知：监听时区变化
+    NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(timeZoneDidChange:) name:NSSystemTimeZoneDidChangeNotification object:nil];
+
     
     // 监听状态栏的方向；即，布局转了，才会接到这个通知，而不是设备旋转的通知。
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarOrientationChange:)name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];

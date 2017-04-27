@@ -37,6 +37,9 @@
 //    JWCalendarConfig *config = self.calendar.otherConfig;
 //    config.weekFontColor = [UIColor redColor];
     
+    NSInteger dayNumberInWeek = [[NSDate date] weeklyOrdinality];
+    NSLog(@"---:%ld",(long)dayNumberInWeek);
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -52,6 +55,13 @@
     self.currentDate.text = [format stringFromDate:[NSDate date]];
 }
 
+- (IBAction)refreshCalendar:(UIButton *)sender {
+    
+//    setNeedsLayout和setNeedsDisplay
+    
+    [self.view setNeedsLayout];
+    [self.view setNeedsDisplay];
+}
 
 // 变更标记
 - (IBAction)changeMarketButton:(id)sender {
@@ -63,7 +73,6 @@
 - (IBAction)preMonth:(id)sender {
     
     [self.calendar previousMonth];
-    
 }
 
 // 下一月

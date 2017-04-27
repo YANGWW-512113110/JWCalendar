@@ -48,6 +48,7 @@
         dayLabel.textAlignment = NSTextAlignmentCenter;
         self.dayLabel = dayLabel;
         [self addSubview:dayLabel];
+        
     }
     return self;
 }
@@ -74,7 +75,6 @@
     NSInteger month = [[self.dateFormat stringFromDate:date] integerValue];
     
     NSInteger dayNumberInWeek = [date weeklyOrdinality];
-    
     
     BOOL isCurrentMonth = NO;
     BOOL isWeekend      = NO;
@@ -299,8 +299,8 @@
         _isMarkedDay = NO;
         self.date = _date;
     }
-    
 }
+
 
 /**
  *  点击

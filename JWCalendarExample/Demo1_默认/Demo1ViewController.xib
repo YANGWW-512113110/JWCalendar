@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ci5-jg-F2S">
-                    <rect key="frame" x="20" y="194.5" width="335" height="30"/>
+                    <rect key="frame" x="20" y="204" width="335" height="30"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9k-PT-upo">
                             <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
@@ -59,14 +59,14 @@
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYP-IE-o8D" customClass="JWCalendar">
-                    <rect key="frame" x="20" y="232.5" width="335" height="246"/>
+                    <rect key="frame" x="20" y="242" width="335" height="246"/>
                     <color key="backgroundColor" red="0.83469202899999995" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="246" id="XKr-re-UBv"/>
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="F1U-Wv-Hnh">
-                    <rect key="frame" x="20" y="70" width="335" height="94.5"/>
+                    <rect key="frame" x="20" y="70" width="335" height="104"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2g-bD-5Xt">
                             <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
@@ -103,14 +103,21 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wny-NR-HFs">
-                            <rect key="frame" x="0.0" y="74" width="335" height="20.5"/>
+                            <rect key="frame" x="0.0" y="74" width="335" height="30"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnn-Jw-hHX">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="289" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJu-ht-ZTx">
+                                    <rect key="frame" x="289" y="0.0" width="46" height="30"/>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="refreshCalendar:" destination="-1" eventType="touchUpInside" id="I4Y-dE-6jd"/>
+                                    </connections>
+                                </button>
                             </subviews>
                         </stackView>
                     </subviews>
@@ -128,7 +135,7 @@
                 <constraint firstAttribute="trailing" secondItem="F1U-Wv-Hnh" secondAttribute="trailing" constant="20" id="uNu-Pj-45e"/>
                 <constraint firstAttribute="trailing" secondItem="Ci5-jg-F2S" secondAttribute="trailing" constant="20" id="x84-sC-T0O"/>
             </constraints>
-            <point key="canvasLocation" x="-1334" y="-186"/>
+            <point key="canvasLocation" x="-1711" y="-335"/>
         </view>
     </objects>
 </document>
