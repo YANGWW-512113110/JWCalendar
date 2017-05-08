@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
 #  pod trunk push JWCalendar.podspec --allow-warnings --use-libraries
 
 s.name         = "JWCalendar"
-s.version      = "0.0.8"
+s.version      = "0.0.9"
 s.summary      = "日历控件."
 s.homepage     = "https://github.com/YANGWW-512113110/JWCalendar"
 s.license      = "MIT"
