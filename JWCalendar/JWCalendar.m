@@ -102,8 +102,8 @@
 
     /// 创建scrollview
     UIScrollView *scrollView = [[UIScrollView alloc] init];
-//    scrollView.backgroundColor = [UIColor redColor];
-    scrollView.backgroundColor = [UIColor clearColor];
+//    scrollView.backgroundColor = [UIColor clearColor];
+    scrollView.backgroundColor = [UIColor redColor];
     
     [self addSubview:scrollView];
     self.scrollView = scrollView;
@@ -546,9 +546,6 @@
     
     // 配置周日历 /////////////////////////////////////////////////////////
     self.weekCalendar.startDate = [pegDate firstDayOfCurrentWeek];
-    
-    
-    
 }
 
 
@@ -709,8 +706,6 @@
         [self.delegate calendar:self monthView:self.monthArray[1]];
         [self.delegate calendar:self monthView:self.monthArray[2]];
     }
-
-    
 }
 
 @end
