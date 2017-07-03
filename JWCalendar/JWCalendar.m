@@ -36,13 +36,14 @@
 @property (assign,nonatomic) CGRect initFrame;
 
 /// 最后一次滑动时的偏移
-@property (assign,nonatomic) CGFloat lastScrollPoint;
+@property (assign,atomic) CGFloat lastScrollPoint;
 
 /// 即将停止的位置；
-@property (assign,nonatomic) CGFloat willStopScrollPoint;
+@property (assign,atomic) CGFloat willStopScrollPoint;
 
 /// 屏幕方向是否发生变化
-@property (assign,nonatomic) BOOL isStatusBarOrientationChange;
+@property (assign,nonatomic) NSInteger isStatusBarOrientationChange;
+
 
 /// scrollview项部约束,用于上称scrollView
 @property (weak,nonatomic) NSLayoutConstraint *scrollViewTopConstraint;
@@ -93,8 +94,7 @@
 
 - (void)initUI{
     
-    self.clipsToBounds = YES;    
-    self.isStatusBarOrientationChange = NO;
+    self.clipsToBounds = YES;
     self.willStopScrollPoint = 0.0;
     self.backgroundColor = [UIColor clearColor];
     self.monthArray = [NSMutableArray array];
@@ -113,6 +113,7 @@
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.pagingEnabled = YES;
+    scrollView.bounces = NO;
     scrollView.translatesAutoresizingMaskIntoConstraints = NO;
     
     NSArray *h_constaint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[scrollView]-0-|" options:0 metrics:nil views:@{@"scrollView":scrollView}];
@@ -138,15 +139,14 @@
     self.weekBarFollowSlide = YES;
     
     _otherConfig = [[JWCalendarConfig alloc] init];
-    
-    // 通知：监听时区变化
-    NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(timeZoneDidChange:) name:NSSystemTimeZoneDidChangeNotification object:nil];
 
-    
     // 监听状态栏的方向；即，布局转了，才会接到这个通知，而不是设备旋转的通知。
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarOrientationChange:)name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
     
+
+    // 通知：监听时区变化
+    NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(timeZoneDidChange:) name:NSSystemTimeZoneDidChangeNotification object:nil];
 
     /// 周bar中的字体颜色
     self.otherConfig.weekFontColor = [UIColor colorWithRed:0.1333 green:0.4824 blue:0.8118 alpha:1.0];
@@ -272,14 +272,13 @@
     if([self.scrollView subviews].count > 0){
         
         // 屏幕方向发生变化时
-        if(self.isStatusBarOrientationChange){
-            self.isStatusBarOrientationChange = NO;
+        if(self.isStatusBarOrientationChange > 0){
+            --_isStatusBarOrientationChange;
             [self calculateDayViewSize];
             [self updateLayout];
             
             self.initFrame = self.frame;
         }
-
         return;
     }
    
@@ -328,6 +327,15 @@
     
     [self initShow];
 }
+
+/// 监听屏幕旋转
+- (void)statusBarOrientationChange:(NSNotification *)notification{
+    
+    //    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    
+    self.isStatusBarOrientationChange = 3;
+}
+
 
 -(void)setDelegate:(id<JWCalendarDelegate>)delegate{
 
@@ -385,7 +393,6 @@
             [self.monthArray insertObject:month atIndex:0];
         }
         
-        
     }
     
     self.lastScrollPoint = scrollView.contentOffset.x;
@@ -421,6 +428,8 @@
     }
     
     CGFloat heigth = monthHeigth + self.otherConfig.weekBarAndCalendarSpacing + self.otherConfig.weekBarHeigth;
+    
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, 0);
     
     if([self.delegate respondsToSelector:@selector(calendarEndDecelerating:currentMonth:calendarHeigth:)]){
         #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -493,6 +502,8 @@
         
         self.monthArray[i].width = self.width;
         
+        [self.monthArray[i] layoutSubviews];
+        
     }
     
     [self.scrollView setContentSize:CGSizeMake(totalPageNumber*self.width,self.scrollView.height)];
@@ -511,15 +522,6 @@
     
     [self initShow];
 }
-
-/// 监听屏幕旋转
-- (void)statusBarOrientationChange:(NSNotification *)notification{
-    
-    //    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    
-    self.isStatusBarOrientationChange = YES;
-}
-
 
 -(void)setPegDate:(NSDate *)pegDate{
 
@@ -669,7 +671,6 @@
 -(void)nextMonth{
     
     // self.willStopScrollPoint用于解决此方法短时间内连续调用导致的contentOffset.x错乱
-    
     if(self.willStopScrollPoint == 0){
         
         self.willStopScrollPoint = self.scrollView.contentOffset.x + self.width;

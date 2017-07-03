@@ -21,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentDate;
 @property (weak, nonatomic) IBOutlet UILabel *currentSelectedDate;
 
+
+@property (strong,nonatomic) NSDateFormatter *format;
+
 @end
 
 @implementation Demo1ViewController
@@ -32,6 +35,9 @@
     self.currentSelectedDate.text = nil;
     
     self.calendar.delegate = self;
+    
+    _format = [[NSDateFormatter alloc] init];
+    [_format setDateFormat:@"yyyy-MM-dd"];
     
     // 配置其它选项
 //    JWCalendarConfig *config = self.calendar.otherConfig;
@@ -91,10 +97,7 @@
 // 日历中显示的月发生变化时调用
 -(void)calendarMonthChanged:(JWCalendar *)calendar currentMonth:(NSDate *)date calendarHeigth:(CGFloat)calendarHeigth{
 
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    [format setDateFormat:@"yyyy-MM-dd"];
-
-    self.dateLabel.text = [format stringFromDate:date];
+    self.dateLabel.text = [_format stringFromDate:date];
    
     self.calendarHeigthConstraint.constant = calendarHeigth;
     [UIView animateWithDuration:0.25 animations:^{
