@@ -429,6 +429,7 @@
     
     CGFloat heigth = monthHeigth + self.otherConfig.weekBarAndCalendarSpacing + self.otherConfig.weekBarHeigth;
     
+    /// 重新设置contentSize避免上、下滑动
     self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, 0);
     
     if([self.delegate respondsToSelector:@selector(calendarEndDecelerating:currentMonth:calendarHeigth:)]){
@@ -502,8 +503,8 @@
         
         self.monthArray[i].width = self.width;
         
+        // 通常情况下，父view的layoutSubviews会首先被调用，然后才分别调用各个子view的layoutSubviews；执行完layoutSubviews才能确定view的真实尺寸；而此处，主动调用子view的layoutSubviews是为了提前确定子view的尺寸，因为当前函数执行后，可能立即用到子view的真实尺寸；
         [self.monthArray[i] layoutSubviews];
-        
     }
     
     [self.scrollView setContentSize:CGSizeMake(totalPageNumber*self.width,self.scrollView.height)];
