@@ -40,8 +40,8 @@
     [_format setDateFormat:@"yyyy-MM-dd"];
     
     // 配置其它选项
-//    JWCalendarConfig *config = self.calendar.otherConfig;
-//    config.weekFontColor = [UIColor redColor];
+    JWCalendarConfig *config = self.calendar.otherConfig;
+    config.weekFontColor = [UIColor redColor];
     
     NSInteger dayNumberInWeek = [[NSDate date] weeklyOrdinality];
     NSLog(@"---:%ld",(long)dayNumberInWeek);

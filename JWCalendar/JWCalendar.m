@@ -102,8 +102,8 @@
 
     /// 创建scrollview
     UIScrollView *scrollView = [[UIScrollView alloc] init];
-//    scrollView.backgroundColor = [UIColor clearColor];
-    scrollView.backgroundColor = [UIColor redColor];
+    scrollView.backgroundColor = [UIColor clearColor];
+//    scrollView.backgroundColor = [UIColor redColor];
     
     [self addSubview:scrollView];
     self.scrollView = scrollView;
