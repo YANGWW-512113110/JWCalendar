@@ -267,7 +267,12 @@
     if([self.delegate respondsToSelector:@selector(monthViewClickWithDate:)]){
         [self.delegate monthViewClickWithDate:dayView.date];
     }
-    
+}
+
+-(void)dayViewSetDateWithDayView:(DayView *)dayView status:(JWDayViewStatus)dayStatus dayLabel:(UILabel *)dayLabel{
+    if([self.delegate respondsToSelector:@selector(dayViewSetDateWithDayView:status:dayLabel:)]){
+        [self.delegate dayViewSetDateWithDayView:dayView status:dayStatus dayLabel:dayLabel];
+    }
 }
 
 

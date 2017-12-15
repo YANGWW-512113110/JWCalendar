@@ -22,6 +22,8 @@
 /// 点击选中某一天时调用
 -(void)calendar:(JWCalendar *)calendar didSelectDate:(NSDate *)date;
 
+/// 设置日期时调用；可用于重写或更新DayView的显示外观
+-(void)calendar:(JWCalendar *)calendar dayViewSetDateWithDayView:(DayView *)dayView status:(JWDayViewStatus)dayStatus dayLabel:(UILabel *)dayLabel;
 
 @optional
 

@@ -478,7 +478,13 @@
     if([self.delegate respondsToSelector:@selector(calendar:didSelectDate:)]){
         [self.delegate calendar:self didSelectDate:date];
     }
+}
 
+-(void)dayViewSetDateWithDayView:(DayView *)dayView status:(JWDayViewStatus)dayStatus dayLabel:(UILabel *)dayLabel{
+    
+    if([self.delegate respondsToSelector:@selector(calendar:dayViewSetDateWithDayView:status:dayLabel:)]){
+        [self.delegate calendar:self dayViewSetDateWithDayView:dayView status:dayStatus dayLabel:dayLabel];
+    }
 }
 
 -(void)weekCalendar:(WeekCalendar *)weekCalendar didSelectDate:(NSDate *)date{

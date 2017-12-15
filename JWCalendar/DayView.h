@@ -13,6 +13,16 @@
 
 @class DayView;
 
+/// DayView状态
+typedef enum : NSUInteger {
+    JWDayViewStatus_normal,
+    JWDayViewStatus_disable,
+    JWDayViewStatus_selected,
+    JWDayViewStatus_mark,
+    JWDayViewStatus_mark_weekend,
+    JWDayViewStatus_mark_today,
+    JWDayViewStatus_mark_today_weekend
+} JWDayViewStatus;
 
 @protocol DayViewDelegat<NSObject>
 
@@ -20,6 +30,12 @@
  *  点击DayView时调用
  */
 -(void)dayViewWithClick:(DayView *)dayView;
+
+
+/**
+ *  设置日期时调用；可用于重写或更新DayView的显示外观
+ */
+-(void)dayViewSetDateWithDayView:(DayView *)dayView status:(JWDayViewStatus)dayStatus dayLabel:(UILabel *)dayLabel;
 
 @end
 

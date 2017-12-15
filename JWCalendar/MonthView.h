@@ -16,6 +16,10 @@
 /// 点击日历中的天时调用
 -(void)monthViewClickWithDate:(NSDate *)date;
 
+
+/// 设置日期时调用；可用于重写或更新DayView的显示外观
+-(void)dayViewSetDateWithDayView:(DayView *)dayView status:(JWDayViewStatus)dayStatus dayLabel:(UILabel *)dayLabel;
+
 @end
 
 @interface MonthView : UICollectionViewCell

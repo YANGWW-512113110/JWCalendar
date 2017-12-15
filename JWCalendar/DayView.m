@@ -62,6 +62,7 @@
 
 -(void)setDate:(NSDate *)date{
 
+    // 为也刷新数据，此方法可能会被多次调用
     _date = date;
     
     if(isEmpty(@(self.dateMonth))){
@@ -115,40 +116,45 @@
     
     UITapGestureRecognizer*tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickEvent:)];
     
-    // 正常状态
+    JWDayViewStatus status = JWDayViewStatus_normal;
     if(isCurrentMonth && !isWeekend && !isToday && !isSelected && !_isMarkedDay){
-    
+        // 正常状态
+        
         [self addGestureRecognizer:tapGesture];
         
         self.backgroundColor = self.config.calendarBackgroundColor;
         self.dayLabel.font = self.config.calendarFont;
         self.dayLabel.textColor = self.config.calendarFontColor;
-    
+        
+        status = JWDayViewStatus_normal;
+        
     }else if(!isCurrentMonth && !isWeekend && !isToday && !isSelected && !_isMarkedDay){
-    // 禁用状态
+        // 禁用状态
         
         self.backgroundColor = self.config.calendarBackgroundColorForDisable;
         self.dayLabel.font = self.config.calendarFontForDisable;
         self.dayLabel.textColor = self.config.calendarFontColorForDisable;
         
+        status = JWDayViewStatus_disable;
+        
     }else if(isCurrentMonth && isWeekend && !isToday && !isSelected && !_isMarkedDay){
-    // 正常状态下的周末不为今天、未选中、未标记
+        // 正常状态下的周末不为今天、未选中、未标记
         
         [self addGestureRecognizer:tapGesture];
         
         self.backgroundColor = self.config.calendarBackgroundColor;
         self.dayLabel.font = self.config.calendarFont;
         self.dayLabel.textColor = self.config.calendarFontColor;
-    
+        
     }else if(!isCurrentMonth && isWeekend && !isToday && !isSelected && !_isMarkedDay){
-    // 禁用状态下的周末不为今天、未选中、未标记
+        // 禁用状态下的周末不为今天、未选中、未标记
         
         self.backgroundColor = self.config.calendarBackgroundColorForDisable;
         self.dayLabel.font = self.config.calendarFontForDisable;
         self.dayLabel.textColor = self.config.calendarFontColorForDisable;
         
     }else if(isCurrentMonth && !isWeekend && !isToday && isSelected && !_isMarkedDay){
-    // 正常状态下的选中
+        // 正常状态下的选中
         
         [self addGestureRecognizer:tapGesture];
         
@@ -156,22 +162,24 @@
         self.dayLabel.font = self.config.calendarFont;
         self.dayLabel.textColor = self.config.calendarFontColor;
         
+        status = JWDayViewStatus_selected;
+        
     }else if(!isCurrentMonth && !isWeekend && !isToday && isSelected && !_isMarkedDay){
-    // 禁用状态下的选中
+        // 禁用状态下的选中
         
         self.backgroundColor = self.config.calendarBackgroundColor;
         self.dayLabel.font = self.config.calendarFont;
         self.dayLabel.textColor = self.config.calendarFontColor;
         
     }else if(!isCurrentMonth && isWeekend && !isToday && isSelected && !_isMarkedDay){
-    // 禁用状态下的选中为周末
+        // 禁用状态下的选中为周末
         
         self.backgroundColor = self.config.calendarBackgroundColor;
         self.dayLabel.font = self.config.calendarFont;
         self.dayLabel.textColor = self.config.calendarFontColor;
         
     }else if(isCurrentMonth && isWeekend && !isToday && isSelected && !_isMarkedDay){
-    // 正常状态下的选中为周末
+        // 正常状态下的选中为周末
         
         [self addGestureRecognizer:tapGesture];
         
@@ -180,14 +188,14 @@
         self.dayLabel.textColor = self.config.calendarFontColor;
         
     }else if(!isCurrentMonth && !isWeekend && isToday && isSelected && !_isMarkedDay){
-    // 禁用状态下的选中为今天
+        // 禁用状态下的选中为今天
         
         self.backgroundColor = self.config.calendarBackgroundColor;
         self.dayLabel.font = self.config.calendarFont;
         self.dayLabel.textColor = self.config.calendarFontColor;
         
     }else if(isCurrentMonth && !isWeekend && isToday && isSelected && !_isMarkedDay){
-    // 正常状态下的选中为今天
+        // 正常状态下的选中为今天
         
         [self addGestureRecognizer:tapGesture];
         
@@ -196,7 +204,7 @@
         self.dayLabel.textColor = self.config.calendarFontColorForToday;
         
     }else if(isCurrentMonth && !isWeekend && isToday && !isSelected && !_isMarkedDay){
-    // 正常状态下的今天
+        // 正常状态下的今天
         
         [self addGestureRecognizer:tapGesture];
         
@@ -205,14 +213,14 @@
         self.dayLabel.textColor = self.config.calendarFontColorForToday;
         
     }else if(!isCurrentMonth && !isWeekend && isToday && !isSelected && !_isMarkedDay){
-    // 禁用状态下的今天
-
+        // 禁用状态下的今天
+        
         self.backgroundColor = self.config.calendarBackgroundColor;
         self.dayLabel.font = self.config.calendarFont;
         self.dayLabel.textColor = self.config.calendarFontColor;
         
     }else if(isCurrentMonth && isWeekend && isToday && !isSelected && !_isMarkedDay){
-    // 正常状态下的今天为周末
+        // 正常状态下的今天为周末
         
         [self addGestureRecognizer:tapGesture];
         
@@ -221,39 +229,46 @@
         self.dayLabel.textColor = [UIColor redColor];
         
     }else if(!isCurrentMonth && isWeekend && isToday && !isSelected && !_isMarkedDay){
-    // 禁用状态下的今天为周末
+        // 禁用状态下的今天为周末
         
         self.backgroundColor = self.config.calendarBackgroundColorForDisable;
         self.dayLabel.font = self.config.calendarFontForDisable;
         self.dayLabel.textColor = self.config.calendarFontColorForDisable;
         
     }else if(!isCurrentMonth && !isWeekend && !isToday && !isSelected && _isMarkedDay){
-    // 禁用状态下被标记
+        // 禁用状态下被标记
         
         self.backgroundColor = self.config.calendarBackgroundColorForDisable;
         self.dayLabel.font = self.config.calendarFontForDisable;
         self.dayLabel.textColor = self.config.calendarFontColorForDisable;
         
+        
     }else if(isCurrentMonth && !isWeekend && !isToday && !isSelected && _isMarkedDay){
-    // 正常状态下被标记
-       
-        self.backgroundColor = [UIColor colorWithRed:0.1922 green:0.6078 blue:1.0 alpha:1.0];
-        self.dayLabel.font = self.config.calendarFont;
-        self.dayLabel.textColor = [UIColor whiteColor];
-    
-    }else if(isCurrentMonth && isWeekend && !isToday && !isSelected && _isMarkedDay){
-    // 被标记的天为周末
+        // 正常状态下被标记
         
         self.backgroundColor = [UIColor colorWithRed:0.1922 green:0.6078 blue:1.0 alpha:1.0];
         self.dayLabel.font = self.config.calendarFont;
         self.dayLabel.textColor = [UIColor whiteColor];
+        
+        status = JWDayViewStatus_mark;
+        
+    }else if(isCurrentMonth && isWeekend && !isToday && !isSelected && _isMarkedDay){
+        // 被标记的天为周末
+        
+        self.backgroundColor = [UIColor colorWithRed:0.1922 green:0.6078 blue:1.0 alpha:1.0];
+        self.dayLabel.font = self.config.calendarFont;
+        self.dayLabel.textColor = [UIColor whiteColor];
+        
+        status = JWDayViewStatus_mark_weekend;
         
     }else if(isCurrentMonth && !isWeekend && isToday && !isSelected && _isMarkedDay){
-    // 被标记的天为今天
+        // 被标记的天为今天
         
         self.backgroundColor = [UIColor colorWithRed:0.1922 green:0.6078 blue:1.0 alpha:1.0];
         self.dayLabel.font = self.config.calendarFont;
         self.dayLabel.textColor = [UIColor redColor];
+        
+        status = JWDayViewStatus_mark_today;
         
     }else if(isCurrentMonth && isWeekend && isToday && !isSelected && _isMarkedDay){
         // 被标记的天为今天，且今天是周末
@@ -262,13 +277,18 @@
         self.dayLabel.font = self.config.calendarFont;
         self.dayLabel.textColor = [UIColor redColor];
         
+        status = JWDayViewStatus_mark_today_weekend;;
+        
     }else{
-    
+        
         NSString *errorInfo = [NSString stringWithFormat:@"JWCalendar:未知状态；isCurrentMonth:%d,isWeekend:%d,isToday:%d,isSelected:%d,_isMarkedDay:%d",isCurrentMonth,isWeekend,isToday,isSelected,_isMarkedDay];
         [JWCalendarUtility feedbackExceptionDataWidthExceptionContent:errorInfo];
     }
     
-
+    if([self.delegate respondsToSelector:@selector(dayViewSetDateWithDayView:status:dayLabel:)]){
+        [self.delegate dayViewSetDateWithDayView:self status:status dayLabel:self.dayLabel];
+    }
+    
 }
 
 -(void)setIsMarkedDay:(BOOL)isMarkedDay{

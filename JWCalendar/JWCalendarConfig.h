@@ -27,6 +27,9 @@
 
 /// 周bar中分隔线的颜色
 @property (strong,nonatomic) UIColor *weekLineBetweenColor;
+/// 周文字，默认为：@[@"周日",@"周一",@"周二",@"周三",@"周四",@"周五",@"周六"];
+@property (strong,nonatomic) NSArray *weekBarTextList;
+
 
 
 

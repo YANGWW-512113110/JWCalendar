@@ -42,6 +42,13 @@
     // 配置其它选项
     JWCalendarConfig *config = self.calendar.otherConfig;
     config.weekFontColor = [UIColor redColor];
+    config.rowSpacing = 0;
+    config.columnSpacing = 0;
+    config.horizontalSpacingInWeekBar = 0;
+    config.weekBarFrontAndBackMargin = 0;
+    config.weekLineBetweenColor = [UIColor whiteColor];
+    config.monthCalendarSpacing = 0;
+    config.bottomMargin = 0;
     
     NSInteger dayNumberInWeek = [[NSDate date] weeklyOrdinality];
     NSLog(@"---:%ld",(long)dayNumberInWeek);
@@ -121,8 +128,35 @@
     
     
     /// 重新设置标记的日期
-    monthView.needMarketDate = [NSMutableSet setWithObjects:@"2017-01-20",@"2017-01-10",@"2017-02-09",@"2017-02-22",@"2016-12-10", nil];
+    monthView.needMarketDate = [NSMutableSet setWithObjects:@"2017-12-20",@"2017-12-10",@"2018-02-09",@"2018-02-22",@"2018-03-10", nil];
+}
+
+-(void)calendar:(JWCalendar *)calendar dayViewSetDateWithDayView:(DayView *)dayView status:(JWDayViewStatus)dayStatus dayLabel:(UILabel *)dayLabel{
     
+//    NSLog(@"%@",dayView.date);
+    for (UIView *v in dayView.subviews) {
+        if(![v isKindOfClass:dayLabel.class]){
+            [v removeFromSuperview];
+        }
+    }
+    
+    
+    if(dayStatus == JWDayViewStatus_mark ||
+       dayStatus == JWDayViewStatus_mark_weekend ||
+       dayStatus == JWDayViewStatus_mark_today ||
+       dayStatus == JWDayViewStatus_mark_today_weekend){
+        
+        dayView.backgroundColor = [UIColor whiteColor];
+        
+        CGFloat diff = 10; // 标记与DayView的大小差值
+        
+        
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(diff/2.0,diff/2.0, dayView.width-diff, dayView.height - diff)];
+        view.backgroundColor = [UIColor randomColor];
+        view.layer.cornerRadius = view.height/2.0;
+        view.clipsToBounds = YES;
+        [dayView insertSubview:view atIndex:0];
+    }
     
 }
 

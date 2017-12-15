@@ -44,6 +44,9 @@
     self.backgroundColor = self.config.weekLineBetweenColor;
     
     NSArray *weekList = @[@"周日",@"周一",@"周二",@"周三",@"周四",@"周五",@"周六"];
+    if(self.config.weekBarTextList){
+        weekList = self.config.weekBarTextList;
+    }
     
     for (NSInteger i=0; i<7; i++) {
         
