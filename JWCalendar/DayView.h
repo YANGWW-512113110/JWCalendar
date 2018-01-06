@@ -15,13 +15,21 @@
 
 /// DayView状态
 typedef enum : NSUInteger {
-    JWDayViewStatus_normal,
-    JWDayViewStatus_disable,
-    JWDayViewStatus_selected,
-    JWDayViewStatus_mark,
-    JWDayViewStatus_mark_weekend,
-    JWDayViewStatus_mark_today,
-    JWDayViewStatus_mark_today_weekend
+    JWDayViewStatus_normal,       // 正常状态
+    JWDayViewStatus_disable,      // 禁用状态
+    JWDayViewStatus_selected,     // 选中状态
+    JWDayViewStatus_mark,         // 正常状态下被标记
+    JWDayViewStatus_mark_weekend, // 周末被标记
+    JWDayViewStatus_mark_today,   // 今天被标记
+    JWDayViewStatus_mark_today_weekend,  // 今天为周末，且被标记
+    
+    JWDayViewStatus_disable_selected_today, // 禁用状态下今天被选中
+    JWDayViewStatus_selected_today,         // 选中状态下的今天
+    JWDayViewStatus_today,                  // 正常状态下的今天
+    JWDayViewStatus_disable_today,          // 禁用状态下的今天
+    JWDayViewStatus_today_weekend,          // 今天为周末
+    JWDayViewStatus_disable_today_weekend   // 禁用状态下的今天为周末
+    
 } JWDayViewStatus;
 
 @protocol DayViewDelegat<NSObject>

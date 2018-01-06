@@ -194,6 +194,8 @@
         self.dayLabel.font = self.config.calendarFont;
         self.dayLabel.textColor = self.config.calendarFontColor;
         
+        status = JWDayViewStatus_disable_selected_today;
+        
     }else if(isCurrentMonth && !isWeekend && isToday && isSelected && !_isMarkedDay){
         // 正常状态下的选中为今天
         
@@ -202,6 +204,8 @@
         self.backgroundColor = self.config.calendarBackgroundColor;
         self.dayLabel.font = self.config.calendarFont;
         self.dayLabel.textColor = self.config.calendarFontColorForToday;
+        
+        status = JWDayViewStatus_selected_today;
         
     }else if(isCurrentMonth && !isWeekend && isToday && !isSelected && !_isMarkedDay){
         // 正常状态下的今天
@@ -212,12 +216,16 @@
         self.dayLabel.font = self.config.calendarFont;
         self.dayLabel.textColor = self.config.calendarFontColorForToday;
         
+        status = JWDayViewStatus_today;
+        
     }else if(!isCurrentMonth && !isWeekend && isToday && !isSelected && !_isMarkedDay){
         // 禁用状态下的今天
         
         self.backgroundColor = self.config.calendarBackgroundColor;
         self.dayLabel.font = self.config.calendarFont;
         self.dayLabel.textColor = self.config.calendarFontColor;
+        
+        status = JWDayViewStatus_disable_today;
         
     }else if(isCurrentMonth && isWeekend && isToday && !isSelected && !_isMarkedDay){
         // 正常状态下的今天为周末
@@ -228,12 +236,16 @@
         self.dayLabel.font = self.config.calendarFont;
         self.dayLabel.textColor = [UIColor redColor];
         
+        status = JWDayViewStatus_today_weekend;
+        
     }else if(!isCurrentMonth && isWeekend && isToday && !isSelected && !_isMarkedDay){
         // 禁用状态下的今天为周末
         
         self.backgroundColor = self.config.calendarBackgroundColorForDisable;
         self.dayLabel.font = self.config.calendarFontForDisable;
         self.dayLabel.textColor = self.config.calendarFontColorForDisable;
+        
+        status = JWDayViewStatus_disable_today_weekend;
         
     }else if(!isCurrentMonth && !isWeekend && !isToday && !isSelected && _isMarkedDay){
         // 禁用状态下被标记
